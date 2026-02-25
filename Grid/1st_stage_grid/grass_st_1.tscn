@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6d7fy4ec476p"]
+
+[ext_resource type="Texture2D" uid="uid://bqbuthugrbdqf" path="res://Grid/1st_stage_grid/grass_low.png" id="1_p38ls"]
+
+[node name="Grass_st_1" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.242491, 0, 0.242491, 0, 0.342935, 0, -0.242491, 0, 0.242491, 0, 0.600106, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_p38ls")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.242491, 0, -0.242492, 0, 0.342935, 0, 0.242492, 0, 0.242491, 0, 0.600106, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_p38ls")

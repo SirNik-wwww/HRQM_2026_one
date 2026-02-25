@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bvrurhpbgx72a"]
+
+[ext_resource type="Script" uid="uid://bd8r0ouwnn4n5" path="res://Scripts/global_music_etc.gd" id="1_7g0bi"]
+[ext_resource type="PackedScene" uid="uid://1oh2s8qqs7nx" path="res://Creatures/Simple_Player/interface/pause_menu/pause_menu.tscn" id="2_lxis3"]
+[ext_resource type="AudioStream" uid="uid://vq8r5chobcgc" path="res://Sound/BGM/Ode to the Overjoyed.mp3" id="3_7g0bi"]
+[ext_resource type="Script" uid="uid://bud4j4lung254" path="res://Scripts/globus_actions.gd" id="4_h4d4k"]
+[ext_resource type="Script" uid="uid://1ivw2v7fqubu" path="res://Scripts/save_script.gd" id="4_parbi"]
+[ext_resource type="PackedScene" uid="uid://cdqsblmkvfqkk" path="res://Stages/title/firstly_need_settings.tscn" id="6_2cnwi"]
+
+[node name="Global_Music_etc" type="Node" unique_id=49392007 groups=["show_after_quit_control_set"]]
+process_mode = 3
+script = ExtResource("1_7g0bi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1477300243]
+stream = ExtResource("3_7g0bi")
+volume_db = -10.13
+bus = &"BackGround_Music"
+parameters/looping = true
+
+[node name="Globus_actions" type="Node" parent="." unique_id=1679079205]
+process_mode = 3
+script = ExtResource("4_h4d4k")
+
+[node name="Save" type="Node" parent="." unique_id=543340293]
+script = ExtResource("4_parbi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=884647360]
+layer = 3
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=599884842]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.26500002)
+
+[node name="Control_real" type="Control" parent="CanvasLayer" unique_id=89424540]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2116020282]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=73666752]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="pause_menu" parent="CanvasLayer/HBoxContainer" unique_id=1816489253 node_paths=PackedStringArray("OST", "canvas_layer", "control_real") instance=ExtResource("2_lxis3")]
+layout_mode = 2
+size_flags_horizontal = 3
+OST = NodePath("../../../AudioStreamPlayer")
+canvas_layer = NodePath("../..")
+control_real = NodePath("../../Control_real")
+
+[node name="first settings" parent="CanvasLayer/HBoxContainer" unique_id=372557434 instance=ExtResource("6_2cnwi")]
+layout_mode = 2

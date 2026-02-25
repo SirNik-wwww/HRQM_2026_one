@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jnin65t8y8cf"
+path="res://.godot/imported/Eh 103 DR DR.mp3-1e3bc4969ba9d2043638dae8c2452b25.mp3str"
+
+[deps]
+
+source_file="res://Sound/test/Eh 103 DR DR.mp3"
+dest_files=["res://.godot/imported/Eh 103 DR DR.mp3-1e3bc4969ba9d2043638dae8c2452b25.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

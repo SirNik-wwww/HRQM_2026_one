@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://oquah6j2mm0h"
+valid=false
+
+[deps]
+
+source_file="res://Stages/1st_stage/jokes/Translation_Marisa_1st_level.csv"
+
+[params]
+
+compress=true
+delimiter=0

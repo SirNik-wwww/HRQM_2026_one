@@ -1,0 +1,269 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfv8q6t7ft5kj"]
+
+[ext_resource type="Script" uid="uid://b4qnxdwjouc3u" path="res://Creatures/Simple_Player/interface/hp.gd" id="1_dpmm2"]
+[ext_resource type="Texture2D" uid="uid://bm00rbvan6yct" path="res://Creatures/Simple_Player/interface/health_part.png" id="2_qq45n"]
+[ext_resource type="AudioStream" uid="uid://cr7dal87xvhgj" path="res://Sound/SE/voices/крехтение - 1.wav" id="3_8a1va"]
+[ext_resource type="AudioStream" uid="uid://dj3cq7xc5cj16" path="res://Sound/SE/Something/518800__silverillusionist__healing-2-tranquillity.wav" id="4_ac6rm"]
+[ext_resource type="AudioStream" uid="uid://cvpfrspf0wqf3" path="res://Sound/SE/Something/holy-protection-skill-buff - eminyildirim (3 CUT).wav" id="5_qq45n"]
+[ext_resource type="Texture2D" uid="uid://cww71ruk3w4dq" path="res://Creatures/Simple_Player/interface/shield.png" id="6_qq45n"]
+
+[sub_resource type="Animation" id="Animation_lfh1i"]
+length = 0.001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("circle/1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("circle/2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0766256, 0.0183355, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("circle/3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0959723, 0.115132, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("circle/4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0370672, 0.163388, 0.00225449)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("circle/5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0573422, 0.132626, 0.00225449)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("circle/6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0574761, 0.0557797, 0.00225449)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("shield:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.227716, 0.330087, 0.120201)]
+}
+
+[sub_resource type="Animation" id="Animation_u8mt4"]
+resource_name = "def"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("circle/1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.65, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.00671721, 0), Vector3(0, 0, 0), Vector3(0, -0.0134598, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("circle/2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.75, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0766256, 0.0183355, 0), Vector3(-0.0779928, 0.018381, 0), Vector3(-0.0766256, 0.0183355, 0), Vector3(-0.0778748, 0.00499153, 0), Vector3(-0.0766256, 0.0183355, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("circle/3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.45, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0959723, 0.115132, 0), Vector3(-0.0923704, 0.101709, 0), Vector3(-0.0959723, 0.115132, 0), Vector3(-0.114766, 0.13546, 0), Vector3(-0.0959723, 0.115132, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("circle/4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.55, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0370672, 0.163388, 0.00225449), Vector3(-0.0370672, 0.185543, 0.00225449), Vector3(-0.0370672, 0.163388, 0.00225449), Vector3(-0.0370672, 0.167083, 0.00225449), Vector3(-0.0370672, 0.163388, 0.00225449)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("circle/5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.6, 0.85),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0573422, 0.132626, 0.00225449), Vector3(0.0616753, 0.13638, 0.00225449), Vector3(0.0573422, 0.132626, 0.00225449), Vector3(0.0742365, 0.147625, 0.00225449), Vector3(0.0573422, 0.132626, 0.00225449)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("circle/6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.65, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0574761, 0.0557797, 0.00225449), Vector3(0.0704015, 0.0369642, 0.00225449), Vector3(0.0465641, 0.0651712, 0.00225449), Vector3(0.0574761, 0.0557797, 0.00225449)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("shield:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.85, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.227716, 0.244703, 0.120201), Vector3(0.227716, 0.231872, 0.120201), Vector3(0.227716, 0.244703, 0.120201)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0fdu"]
+_data = {
+&"RESET": SubResource("Animation_lfh1i"),
+&"def": SubResource("Animation_u8mt4")
+}
+
+[node name="HP" type="Node3D"]
+script = ExtResource("1_dpmm2")
+
+[node name="circle" type="Node3D" parent="."]
+
+[node name="1" type="Sprite3D" parent="circle"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+layers = 2
+alpha_cut = 1
+texture = ExtResource("2_qq45n")
+
+[node name="2" type="Sprite3D" parent="circle"]
+transform = Transform3D(0.295499, 0.522188, 0, -0.522188, 0.295499, 0, 0, 0, 0.6, -0.0766256, 0.0183355, 0)
+layers = 2
+alpha_cut = 1
+texture = ExtResource("2_qq45n")
+
+[node name="3" type="Sprite3D" parent="circle"]
+transform = Transform3D(-0.280027, 0.530646, 0, -0.530646, -0.280027, 0, 0, 0, 0.6, -0.0959723, 0.115132, 0)
+layers = 2
+alpha_cut = 1
+texture = ExtResource("2_qq45n")
+
+[node name="4" type="Sprite3D" parent="circle"]
+transform = Transform3D(-0.6, -0.000324674, 0, 0.000324674, -0.6, 0, 0, 0, 0.6, -0.0370672, 0.163388, 0.00225449)
+layers = 2
+alpha_cut = 1
+texture = ExtResource("2_qq45n")
+
+[node name="5" type="Sprite3D" parent="circle"]
+transform = Transform3D(-0.288088, -0.526313, 0, 0.526313, -0.288088, 0, 0, 0, 0.6, 0.0573422, 0.132626, 0.00225449)
+layers = 2
+alpha_cut = 1
+texture = ExtResource("2_qq45n")
+
+[node name="6" type="Sprite3D" parent="circle"]
+transform = Transform3D(0.31333, -0.511688, 0, 0.511688, 0.31333, 0, 0, 0, 0.6, 0.0574761, 0.0557797, 0.00225449)
+layers = 2
+alpha_cut = 1
+texture = ExtResource("2_qq45n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c0fdu")
+}
+autoplay = "def"
+
+[node name="sfx_damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8a1va")
+bus = &"Sound_Effects"
+
+[node name="se_heal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ac6rm")
+bus = &"Sound_Effects"
+
+[node name="se_shield" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qq45n")
+volume_db = -1.874
+bus = &"Sound_Effects"
+
+[node name="shield" type="Sprite3D" parent="."]
+transform = Transform3D(0.878558, 0, 0, 0, 0.878558, 0, 0, 0, 0.878558, 0.227716, 0.330087, 0.120201)
+visible = false
+layers = 2
+texture = ExtResource("6_qq45n")
+
+[node name="Label3D" type="Label3D" parent="shield"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0732274, 0.0822415, 0.012683)
+layers = 2
+alpha_cut = 1
+text = "1"
+font_size = 60
+
+[node name="Anti-instakill_Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Anti-instakill_Timer" to="." method="_on_antiinstakill_timer_timeout"]

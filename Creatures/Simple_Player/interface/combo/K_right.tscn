@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://mmtyncqrog8p"]
+
+[ext_resource type="Texture2D" uid="uid://b6ipx661eavrg" path="res://Creatures/Simple_Player/interface/combo/C O M B O dir.png" id="1_54xd0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54xd0"]
+atlas = ExtResource("1_54xd0")
+region = Rect2(8, 8, 100, 100)
+
+[node name="K_right" type="TextureRect"]
+custom_minimum_size = Vector2(45, 45)
+anchors_preset = -1
+anchor_right = 0.03125
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_54xd0")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk1oyqf4cuogb"]
+
+[ext_resource type="Script" uid="uid://dwv617ctotxe8" path="res://Creatures/Simple_Player/pigment_collector.gd" id="1_pabh3"]
+[ext_resource type="Texture2D" uid="uid://bdk5fwhomx5f5" path="res://Creatures/Simple_Player/interface/Collector_line.png" id="2_vkpe3"]
+[ext_resource type="Texture2D" uid="uid://c6ai8q3ybxf0g" path="res://Creatures/Simple_Player/interface/red_one.png" id="3_b8flo"]
+[ext_resource type="Texture2D" uid="uid://8rxjof4fjbgr" path="res://Creatures/Simple_Player/interface/blue_one.png" id="4_ojtki"]
+[ext_resource type="AudioStream" uid="uid://dj3cq7xc5cj16" path="res://Sound/SE/Something/518800__silverillusionist__healing-2-tranquillity.wav" id="5_vkpe3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gkov8"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Pigment_collector" type="Node3D"]
+script = ExtResource("1_pabh3")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+layers = 2
+texture = SubResource("ViewportTexture_gkov8")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Red_Bar" type="TextureProgressBar" parent="SubViewport/Control/HBoxContainer"]
+layout_mode = 2
+max_value = 20.0
+fill_mode = 3
+texture_under = ExtResource("2_vkpe3")
+texture_progress = ExtResource("3_b8flo")
+
+[node name="Red_Label" type="Label" parent="SubViewport/Control/HBoxContainer/Red_Bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 3.0
+offset_right = 59.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "1/20
+"
+
+[node name="Blue_Bar" type="TextureProgressBar" parent="SubViewport/Control/HBoxContainer"]
+layout_mode = 2
+max_value = 20.0
+fill_mode = 3
+texture_under = ExtResource("2_vkpe3")
+texture_progress = ExtResource("4_ojtki")
+
+[node name="Blue_Label" type="Label" parent="SubViewport/Control/HBoxContainer/Blue_Bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -2.0
+offset_right = 63.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "1/20
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vkpe3")
+bus = &"Sound_Effects"

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://04khdft467y8"]
+
+[ext_resource type="Script" uid="uid://b1mdwqrcdm23v" path="res://Objects/save_area/save_area.gd" id="1_xvn0u"]
+[ext_resource type="AudioStream" uid="uid://ck5i7p0imwguh" path="res://Sound/test/battery-low.mp3" id="2_njtow"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_10kxn"]
+height = 0.5
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csyrj"]
+transparency = 1
+albedo_color = Color(1, 0.647059, 0, 0.509804)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8tg6g"]
+material = SubResource("StandardMaterial3D_csyrj")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.5
+radial_segments = 16
+
+[node name="save_area" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xvn0u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CylinderShape3D_10kxn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CylinderMesh_8tg6g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_njtow")
+bus = &"Sound_Effects"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

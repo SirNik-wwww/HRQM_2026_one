@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcfygiw2d7r6y"
+path="res://.godot/imported/gfl7__mp7-reload-sound (CUT).wav-d51c2fd98b95c1a36857a0bc43bd61d0.sample"
+
+[deps]
+
+source_file="res://Sound/SE/Something/gfl7__mp7-reload-sound (CUT).wav"
+dest_files=["res://.godot/imported/gfl7__mp7-reload-sound (CUT).wav-d51c2fd98b95c1a36857a0bc43bd61d0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bhe7aa6008kq8"]
+
+[ext_resource type="Texture2D" uid="uid://u3epph5bk643" path="res://Objects/some_obstacles/sings what stop color.png" id="1_8rq6v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ein8"]
+size = Vector3(12, 4, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpoqk"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.26666668)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o0esy"]
+material = SubResource("StandardMaterial3D_xpoqk")
+
+[node name="next_door" type="StaticBody3D" unique_id=270163514]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=489963645]
+transform = Transform3D(1, -1.10929e-07, 0, 2.15368e-09, 1, -2.91038e-10, 5.96046e-08, -1.4581e-07, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_7ein8")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=432084531]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.5, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_8rq6v")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" unique_id=2110384864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_8rq6v")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Sprite3D" unique_id=292597500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_8rq6v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1816983369]
+transform = Transform3D(12, 0, 0, 0, 4.211, 0, 0, 0, 0.108, 0, -0.2, -0.1)
+mesh = SubResource("BoxMesh_o0esy")

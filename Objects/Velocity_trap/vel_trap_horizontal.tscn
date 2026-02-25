@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dg2yp043vlbj1"]
+
+[ext_resource type="Script" uid="uid://bpdvhr4iq8sft" path="res://Objects/Velocity_trap/vel_trap.gd" id="1_pnc6u"]
+[ext_resource type="Texture2D" uid="uid://c2nhl1qty1kil" path="res://Objects/Velocity_trap/DESK DESK DESK.png" id="2_o51iw"]
+[ext_resource type="Texture2D" uid="uid://8mgtr2kkue1c" path="res://Objects/Velocity_trap/SPIKES SPIKES SPIKES.png" id="3_5vj5d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oomrh"]
+transparency = 1
+albedo_color = Color(0.988235, 0.0666667, 0.313726, 0.286275)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ry1i"]
+material = SubResource("StandardMaterial3D_oomrh")
+size = Vector3(3, 2.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phnxu"]
+size = Vector3(2.8, 1, 1.6)
+
+[node name="Vel_trap_horizontal" type="Area3D" unique_id=561978953]
+collision_layer = 0
+collision_mask = 18
+script = ExtResource("1_pnc6u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=865265132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("BoxMesh_1ry1i")
+
+[node name="desk" type="Sprite3D" parent="." unique_id=146133098]
+transform = Transform3D(0.21499166, 0.13278165, -9.39758e-09, 0, -8.208196e-09, -0.304044, -0.21499166, 0.13278165, -9.39758e-09, 0.8037641, 0.052486658, 0.26100245)
+alpha_cut = 1
+texture = ExtResource("2_o51iw")
+
+[node name="Spike" type="Sprite3D" parent="desk" unique_id=1578095051]
+transform = Transform3D(0.85, 0, 0, 0, -3.71547e-08, 0.85, 0, -0.85, -3.71547e-08, 0, 0, -0.815096)
+alpha_cut = 1
+texture = ExtResource("3_5vj5d")
+
+[node name="desk2" type="Sprite3D" parent="." unique_id=2111712742]
+transform = Transform3D(0.21499181, -0.13278162, 9.397576e-09, 0, -8.208193e-09, -0.30404386, 0.21499181, 0.13278162, -9.397576e-09, 0.8038329, 0.06433129, 0.2603025)
+alpha_cut = 1
+texture = ExtResource("2_o51iw")
+
+[node name="Spike" type="Sprite3D" parent="desk2" unique_id=861734985]
+transform = Transform3D(0.85, 0, 0, 0, -3.71547e-08, 0.85, 0, -0.85, -3.71547e-08, 0, 0, -0.815096)
+alpha_cut = 1
+texture = ExtResource("3_5vj5d")
+
+[node name="desk3" type="Sprite3D" parent="." unique_id=1983136696]
+transform = Transform3D(-0.18148336, -0.15066037, 1.0662961e-08, -1.0078246e-15, -8.208188e-09, -0.30404434, 0.24394031, -0.11208623, 7.9328855e-09, -0.80444574, 0.06843996, 0.051994115)
+alpha_cut = 1
+texture = ExtResource("2_o51iw")
+
+[node name="Spike" type="Sprite3D" parent="desk3" unique_id=635155400]
+transform = Transform3D(0.85, 0, 0, 0, -3.71547e-08, 0.85, 0, -0.85, -3.71547e-08, 0, 0, -0.815096)
+alpha_cut = 1
+texture = ExtResource("3_5vj5d")
+
+[node name="desk4" type="Sprite3D" parent="." unique_id=589442846]
+transform = Transform3D(0.21499194, -0.13278155, 9.39759e-09, -1.0078246e-15, -8.208188e-09, -0.30404434, 0.21499196, 0.13278152, -9.39759e-09, -0.61612904, 0.06843996, 0.112781994)
+alpha_cut = 1
+texture = ExtResource("2_o51iw")
+
+[node name="Spike" type="Sprite3D" parent="desk4" unique_id=1401666218]
+transform = Transform3D(0.85, 0, 0, 0, -3.71547e-08, 0.85, 0, -0.85, -3.71547e-08, 0, 0, -0.815096)
+alpha_cut = 1
+texture = ExtResource("3_5vj5d")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=569651668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1920929e-07, 0.25, 0.145497)
+shape = SubResource("BoxShape3D_phnxu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

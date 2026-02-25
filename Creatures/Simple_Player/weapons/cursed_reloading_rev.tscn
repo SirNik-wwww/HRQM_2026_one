@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://dugph74lg3s7w"]
+
+[ext_resource type="Script" uid="uid://drjkv2t2nb3va" path="res://Creatures/Simple_Player/weapons/cursed_reloading_rev.gd" id="1_pcq3e"]
+[ext_resource type="Texture2D" uid="uid://demek6ruko4bu" path="res://Creatures/Simple_Player/weapons/cursed baraban.png" id="2_ldb0m"]
+[ext_resource type="Texture2D" uid="uid://c41schimxrdvw" path="res://Creatures/Simple_Player/weapons/gun_0_2323232332.png" id="2_pcq3e"]
+[ext_resource type="Texture2D" uid="uid://cloh1iuw6b6mq" path="res://Creatures/Simple_Player/weapons/le_pipe.png" id="3_pcq3e"]
+[ext_resource type="AudioStream" uid="uid://bhjjhlaxkua8r" path="res://Sound/SE/Something/211634__qubodup__damage mp3.mp3" id="5_fvbuq"]
+[ext_resource type="AudioStream" uid="uid://0ttj8jvec55w" path="res://Sound/SE/Something/(Pich)_fastforwardsoundeffects__orchestra-stab.wav" id="6_ftsrm"]
+
+[sub_resource type="Animation" id="Animation_m5c77"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_itself:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 0.45, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_itself:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_itself/Node3D/bullets:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_itself/Node3D/Block:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.4322857, -1.5707966, -1.5707966)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hand_itself/Node3D/Block:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.015371591, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hand_itself:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("hand_itself/Node3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.6298175, 0.6758733, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("hand_itself/Node3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fvbuq"]
+resource_name = "atk"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_itself:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.25, 0.45, 0), Vector3(-0.25, 0.34205353, 0), Vector3(-0.25, 0.37464267, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_itself:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_itself:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.014944909, 0.06666667, 0.20000002, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_itself/Node3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.19790505, 0.20000002, 0.39806968, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.71271276, 0.59492373, 0), Vector3(0.30676556, 0.11314201, -1.753078e-07), Vector3(0.16798389, -1.0388674, -2.629617e-07), Vector3(0.16798389, -1.1020892, -2.629617e-07), Vector3(0.16798389, -1.1020892, -2.629617e-07), Vector3(0.24604881, 0.10384107, -2.629617e-07), Vector3(0.24604881, 0.10384107, -2.629617e-07), Vector3(0.71271276, 0.59492373, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hand_itself/Node3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.19790505, 0.20000002, 0.39806968, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.21050411), Vector3(0, 0, 0.692599), Vector3(0, 0, 0.692599), Vector3(0, 0, 0.26265466), Vector3(0, 0, 0.26265466), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pcq3e"]
+resource_name = "def"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_itself:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 0.45, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_itself:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand_itself/Node3D/bullets:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand_itself/Node3D/Block:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.4322857, -1.5707966, -1.5707966)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hand_itself/Node3D/Block:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.009069443, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hand_itself/Node3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.71271276, 0.59492373, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ftsrm"]
+resource_name = "reaload"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand_itself:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.36008176, 0.4380967, -0.09567529), Vector3(-0.3733956, 0.4380967, -0.09567529), Vector3(-0.25, 0.45, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand_itself:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.059116747, -0.3102265, 0.25023288), Vector3(0.059116747, -0.31022653, 0.25023288), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftsrm"]
+_data = {
+&"RESET": SubResource("Animation_m5c77"),
+&"atk": SubResource("Animation_fvbuq"),
+&"def": SubResource("Animation_pcq3e"),
+&"reaload": SubResource("Animation_ftsrm")
+}
+
+[node name="Cursed_Reloading_Rev" type="Node3D" unique_id=1883849848 node_paths=PackedStringArray("bul", "MARK")]
+script = ExtResource("1_pcq3e")
+bul = NodePath("hand_itself/Node3D/bullets")
+MARK = NodePath("Marker3D")
+
+[node name="hand_itself" type="Sprite3D" parent="." unique_id=1812216897]
+transform = Transform3D(0.16999997, 0, 0, 0, 0.17, 0, 0, 0, 0.16999993, -0.25, 0.45, 0)
+alpha_cut = 1
+texture = ExtResource("2_pcq3e")
+hframes = 3
+
+[node name="Node3D" type="Node3D" parent="hand_itself" unique_id=1354105228]
+transform = Transform3D(5.882354, 0, 0, 0, 5.882352, 0, 0, 0, 5.8823533, 0.6298175, 0.6758733, 0)
+
+[node name="bullets" type="Sprite3D" parent="hand_itself/Node3D" unique_id=642168829]
+transform = Transform3D(-0.00042427704, -0.042497877, 7.4305637e-09, -4.717643e-18, -1.8577339e-09, -0.16999999, 0.04249788, -0.00042427896, 7.418333e-11, 0, 0, 0)
+alpha_cut = 1
+texture = ExtResource("2_ldb0m")
+
+[node name="Block" type="Sprite3D" parent="hand_itself/Node3D" unique_id=1690244641]
+transform = Transform3D(0.05436696, -1.4699e-10, -0.023458235, -0.0075789336, -2.1190518e-09, -0.16827604, -1.4832131e-10, 0.054399975, -6.6182717e-09, 0, -0.015371591, 0)
+alpha_cut = 1
+texture = ExtResource("3_pcq3e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1157727220]
+libraries/ = SubResource("AnimationLibrary_ftsrm")
+autoplay = &"def"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=967905671]
+stream = ExtResource("5_fvbuq")
+bus = &"Sound_Effects"
+
+[node name="fuck" type="AudioStreamPlayer" parent="." unique_id=1981272839]
+stream = ExtResource("6_ftsrm")
+bus = &"Sound_Effects"
+
+[node name="hz" type="Timer" parent="." unique_id=1440153137]
+wait_time = 0.1
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1415739481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.7, 0)
+
+[node name="reload" type="Timer" parent="." unique_id=761240815]
+wait_time = 0.3

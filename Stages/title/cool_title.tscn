@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://cq03whbwg4xiw"]
+
+[ext_resource type="Script" uid="uid://dos7304gaib7y" path="res://Stages/title/cool_title.gd" id="1_hpvuu"]
+[ext_resource type="MeshLibrary" uid="uid://e01fv426sywn" path="res://Grid/1st_stage_grid/1st_grid.tres" id="1_wcf3y"]
+[ext_resource type="PackedScene" uid="uid://bvrurhpbgx72a" path="res://Scripts/global_music_etc.tscn" id="2_7b1j4"]
+[ext_resource type="Texture2D" uid="uid://c2pprl7kph4h8" path="res://Grid/1st_stage_grid/Grid_1st_lvl_just_leaves.png" id="2_60pay"]
+[ext_resource type="PackedScene" uid="uid://d03gh1lddei5h" path="res://Grid/1st_stage_grid/stone_st_1.tscn" id="3_v15x1"]
+[ext_resource type="PackedScene" uid="uid://c6d7fy4ec476p" path="res://Grid/1st_stage_grid/grass_st_1.tscn" id="4_hpvuu"]
+[ext_resource type="Shader" uid="uid://ckht0s6qorkeu" path="res://shaders/1_st_sky_shdr.gdshader" id="5_v15x1"]
+[ext_resource type="Texture2D" uid="uid://bpchdwiv2l5bg" path="res://Texture/huita/skybox-midday-001-180-3d-model.png" id="6_hpvuu"]
+[ext_resource type="FontFile" uid="uid://eqkiic8464yc" path="res://Resources/dialogue_syst/Share Tech CYR/Share-Tech-CYR.otf" id="8_t8wh5"]
+[ext_resource type="StyleBox" uid="uid://cabmrh3w7ivyo" path="res://Stages/title/cool_title_button_texture.stylebox" id="9_shcal"]
+[ext_resource type="PackedScene" uid="uid://cdqsblmkvfqkk" path="res://Stages/title/firstly_need_settings.tscn" id="11_02aoa"]
+[ext_resource type="Texture2D" uid="uid://dkjel002c60if" path="res://Texture/yes/menu window.png" id="12_6kik6"]
+[ext_resource type="PackedScene" uid="uid://dprmprqt53i2r" path="res://Stages/title/stage_selection.tscn" id="12_drf6g"]
+[ext_resource type="AudioStream" uid="uid://ck5i7p0imwguh" path="res://Sound/test/battery-low.mp3" id="15_6kik6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gyhim"]
+shader = ExtResource("5_v15x1")
+shader_parameter/skyColor = Color(0.46023738, 0.42271683, 0.5727843, 1)
+shader_parameter/horizonColor = Color(0.4861241, 0.7098658, 0.6223005, 1)
+shader_parameter/skyTexture = ExtResource("6_hpvuu")
+
+[sub_resource type="Sky" id="Sky_ys300"]
+sky_material = SubResource("ShaderMaterial_gyhim")
+
+[sub_resource type="Environment" id="Environment_t8wh5"]
+background_mode = 2
+sky = SubResource("Sky_ys300")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_mode = 1
+fog_density = 1.0
+
+[node name="cool_title" type="Node3D" unique_id=1671985710 node_paths=PackedStringArray("stage_selection", "control_set", "control_self") groups=["show_after_quit_control_set"]]
+script = ExtResource("1_hpvuu")
+stage_selection = NodePath("Stage_selection")
+control_set = NodePath("")
+control_self = NodePath("3_buttons")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1699585035]
+transform = Transform3D(0.9400324, 0, 0.34108514, 0, 1, 0, -0.34108514, 0, 0.9400324, 1.5860481, 2, 4.17605)
+
+[node name="Global_Music_etc" parent="." unique_id=1836049354 instance=ExtResource("2_7b1j4")]
+
+[node name="room_for _copy" type="Node3D" parent="." unique_id=499733211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 26)
+
+[node name="GridMap_floor" type="GridMap" parent="room_for _copy" unique_id=1643801761]
+mesh_library = ExtResource("1_wcf3y")
+cell_size = Vector3(1, 1, 1)
+
+[node name="GridMap_walls" type="GridMap" parent="room_for _copy" unique_id=1541179316]
+mesh_library = ExtResource("1_wcf3y")
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="decor" type="Node3D" parent="room_for _copy" unique_id=205479574]
+
+[node name="brushes" type="Node3D" parent="room_for _copy/decor" unique_id=1576651383]
+
+[node name="brush_" type="Sprite3D" parent="room_for _copy/decor/brushes" unique_id=1423806498]
+transform = Transform3D(0.314429, 0, -0.192727, 0, 0.368794, 0, 0.192727, 0, 0.314429, 4.64785, 2, 2.6702137)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_60pay")
+
+[node name="stones" type="Node3D" parent="room_for _copy/decor" unique_id=1129944353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Stone_st_1" parent="room_for _copy/decor/stones" unique_id=600901811 instance=ExtResource("3_v15x1")]
+transform = Transform3D(0.9491511, 0, 0.31482086, 0, 1, 0, -0.31482086, 0, 0.9491511, 13.081921, -1.0734109, -27.644043)
+
+[node name="Grass" type="Node3D" parent="room_for _copy/decor" unique_id=967151449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965474, 0)
+
+[node name="Grass_st_1" parent="room_for _copy/decor/Grass" unique_id=1844747282 instance=ExtResource("4_hpvuu")]
+transform = Transform3D(0.961555, 0, 0.274614, 0, 1, 0, -0.274614, 0, 0.961555, 14.25968, -1.000001, -32.18157)
+
+[node name="Grass_st_2" parent="room_for _copy/decor/Grass" unique_id=892267603 instance=ExtResource("4_hpvuu")]
+transform = Transform3D(-0.13801529, 0, 0.99043065, 0, 1, 0, -0.99043065, 0, -0.13801529, 14.824883, -1.000001, -25.989923)
+
+[node name="Grass_st_3" parent="room_for _copy/decor/Grass" unique_id=1429011601 instance=ExtResource("4_hpvuu")]
+transform = Transform3D(-0.13801529, 0, 0.99043065, 0, 1, 0, -0.99043065, 0, -0.13801529, 16.824883, -1.000001, -28.989923)
+
+[node name="layout" type="Node3D" parent="." unique_id=894521838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 26)
+
+[node name="GridMap_floor" type="GridMap" parent="layout" unique_id=1188399855]
+mesh_library = ExtResource("1_wcf3y")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-65521, 65511, 0, -65521, 65510, 0, -65521, 65509, 0, -65521, 65508, 0, -65520, 65508, 0, -65520, 65509, 0, -65520, 65510, 0, -65520, 65511, 0, -65521, 65512, 0, -65522, 65512, 0, -65522, 65511, 0, -65522, 65510, 0, -65522, 65509, 0, -65522, 65508, 0, -65522, 65507, 0, -65521, 65507, 0, -65523, 65508, 0, -65523, 65509, 0, -65524, 65509, 0, -65524, 65510, 0, -65524, 65511, 0, -65523, 65511, 0, -65523, 65512, 0, -65523, 65510, 0, -65521, 65506, 0, -65520, 65506, 0, -65520, 65507, 0, -65519, 65509, 0, -65519, 65510, 0, -65519, 65508, 0, -65519, 65507, 0, -65518, 65508, 0, -65518, 65507, 0, -65519, 65506, 0, -65522, 65506, 0, -65523, 65506, 0, -65523, 65505, 0, -65522, 65505, 0, -65521, 65505, 0, -65521, 65504, 0, -65522, 65504, 0, -65523, 65504, 0, -65523, 65507, 0, -65524, 65506, 0, -65524, 65505, 0, -65524, 65504, 0, -65524, 65507, 0, -65520, 65505, 0, -65524, 65508, 0, -65525, 65509, 0, -65525, 65508, 0, -65525, 65507, 0, -65526, 65507, 0, -65526, 65506, 0, -65525, 65505, 0, -65525, 65504, 0, -65524, 65503, 0, -65523, 65503, 0, -65522, 65503, 0, -65521, 65503, 0, -65520, 65504, 0, -65519, 65504, 0, -65519, 65505, 0, -65525, 65506, 0, -65526, 65505, 0, -65526, 65504, 0, -65526, 65503, 0, -65525, 65503, 0, -65523, 65502, 0, -65522, 65502, 0, -65521, 65502, 0, -65520, 65502, 0, -65520, 65503, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="GridMap_walls" type="GridMap" parent="layout" unique_id=1779189578]
+mesh_library = ExtResource("1_wcf3y")
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="decor" type="Node3D" parent="layout" unique_id=1666292914]
+
+[node name="brushes" type="Node3D" parent="layout/decor" unique_id=647620111]
+
+[node name="brush_" type="Sprite3D" parent="layout/decor/brushes" unique_id=305366118]
+transform = Transform3D(0.17652145, 0, 0.32380465, 0, 0.368794, 0, -0.32380465, 0, 0.17652145, 11.9228735, 0, -30.49925)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_60pay")
+
+[node name="stones" type="Node3D" parent="layout/decor" unique_id=1281602384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Stone_st_1" parent="layout/decor/stones" unique_id=280035783 instance=ExtResource("3_v15x1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56597, -0.0734109, 1.82818)
+
+[node name="Grass" type="Node3D" parent="layout/decor" unique_id=74957014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965474, 0)
+
+[node name="Grass_st_1" parent="layout/decor/Grass" unique_id=1046678142 instance=ExtResource("4_hpvuu")]
+transform = Transform3D(0.961555, 0, 0.274614, 0, 1, 0, -0.274614, 0, 0.961555, 0, 0, -3.03393)
+
+[node name="env" type="Node3D" parent="." unique_id=28843761]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=588343350]
+transform = Transform3D(0.697377, -0.138276, 0.703239, -0.369404, 0.77149, 0.51802, -0.614172, -0.621034, 0.48694, -48, 9, 4)
+light_energy = 0.436
+shadow_enabled = true
+shadow_opacity = 0.75
+shadow_blur = 10.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1557998807]
+environment = SubResource("Environment_t8wh5")
+
+[node name="3_buttons" type="Control" parent="." unique_id=280952834]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="3_buttons" unique_id=1905254804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MAIN BUTTONS" type="VBoxContainer" parent="3_buttons/HBoxContainer" unique_id=1454732446]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Control2" type="Control" parent="3_buttons/HBoxContainer/MAIN BUTTONS" unique_id=765484473]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="3_buttons/HBoxContainer/MAIN BUTTONS" unique_id=1812192630]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="ButtonSTART" type="Button" parent="3_buttons/HBoxContainer/MAIN BUTTONS/MarginContainer" unique_id=66275500]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("8_t8wh5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("9_shcal")
+text = "MAIN_MENU_START"
+
+[node name="MarginContainer2" type="MarginContainer" parent="3_buttons/HBoxContainer/MAIN BUTTONS" unique_id=1873642992]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="ButtonSETTING" type="Button" parent="3_buttons/HBoxContainer/MAIN BUTTONS/MarginContainer2" unique_id=1981520437]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("8_t8wh5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("9_shcal")
+text = "MAIN_MENU_CONTROL"
+
+[node name="MarginContainer3" type="MarginContainer" parent="3_buttons/HBoxContainer/MAIN BUTTONS" unique_id=922632427]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="ButtonEXIT" type="Button" parent="3_buttons/HBoxContainer/MAIN BUTTONS/MarginContainer3" unique_id=1287043829]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("8_t8wh5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("9_shcal")
+text = "MAIN_MENU_EXIT"
+
+[node name="Control" type="Control" parent="3_buttons/HBoxContainer/MAIN BUTTONS" unique_id=1014790556]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="idk" type="Control" parent="3_buttons/HBoxContainer" unique_id=1485375704]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="first settings" parent="3_buttons/HBoxContainer" unique_id=1867872529 instance=ExtResource("11_02aoa")]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1543196326]
+size = Vector2i(340, 120)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SubViewport" unique_id=463803247]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_6kik6")
+region_rect = Rect2(27.418123, 23.640375, 445.35846, 451.2813)
+patch_margin_left = 76
+patch_margin_top = 82
+patch_margin_right = 76
+patch_margin_bottom = 84
+
+[node name="Stage_selection" parent="." unique_id=1224413219 node_paths=PackedStringArray("main_tscn") instance=ExtResource("12_drf6g")]
+visible = false
+main_tscn = NodePath("../3_buttons")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="." unique_id=148705466]
+stream = ExtResource("15_6kik6")
+volume_db = 13.507
+bus = &"Sound_Effects"
+
+[connection signal="pressed" from="3_buttons/HBoxContainer/MAIN BUTTONS/MarginContainer/ButtonSTART" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="3_buttons/HBoxContainer/MAIN BUTTONS/MarginContainer2/ButtonSETTING" to="." method="_on_button_setting_pressed"]
+[connection signal="pressed" from="3_buttons/HBoxContainer/MAIN BUTTONS/MarginContainer3/ButtonEXIT" to="." method="_on_button_exit_pressed"]

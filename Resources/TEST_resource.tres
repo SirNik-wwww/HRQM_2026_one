@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TestStats" load_steps=2 format=3 uid="uid://bvuqlp10se2bm"]
+
+[ext_resource type="Script" uid="uid://dytmxrcr0sdky" path="res://Resources/NewCustRes_TEST.gd" id="1_x5eqn"]
+
+[resource]
+script = ExtResource("1_x5eqn")
+damage = 23124
+funcky_number = 999

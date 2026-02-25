@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://0ci4ocmvi55r"]
+
+[ext_resource type="Script" uid="uid://cqgksunfjtxfp" path="res://Creatures/Simple_Player/weapons/anvil_gun.gd" id="1_c0emp"]
+[ext_resource type="Texture2D" uid="uid://dfnclupbtttnc" path="res://Creatures/NonePlayebleCharapterS/the_jerk/log.png" id="2_mvcb8"]
+[ext_resource type="AudioStream" uid="uid://b4djn3frbdn5m" path="res://Sound/SE/punches/_hit-7_ihitokage_short.wav" id="3_t0utn"]
+
+[node name="anvil_gun" type="Node3D" node_paths=PackedStringArray("MARK")]
+script = ExtResource("1_c0emp")
+MARK = NodePath("Marker3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 1, 0)
+texture = ExtResource("2_mvcb8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="hz" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t0utn")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)

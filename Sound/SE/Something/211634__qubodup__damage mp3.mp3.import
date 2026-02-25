@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhjjhlaxkua8r"
+path="res://.godot/imported/211634__qubodup__damage mp3.mp3-55f7fc8fe41d1933b4ffe3203f844aeb.mp3str"
+
+[deps]
+
+source_file="res://Sound/SE/Something/211634__qubodup__damage mp3.mp3"
+dest_files=["res://.godot/imported/211634__qubodup__damage mp3.mp3-55f7fc8fe41d1933b4ffe3203f844aeb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo5oi84bryeus"]
+
+[ext_resource type="Script" uid="uid://dv5gp5ednxlpv" path="res://Creatures/Simple_Player/weapons/boom_projectale.gd" id="1_ajyth"]
+[ext_resource type="Texture2D" uid="uid://bdk5fwhomx5f5" path="res://Creatures/Simple_Player/interface/Collector_line.png" id="1_nkth8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o0w8r"]
+radius = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ajyth"]
+radius = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwkx5"]
+transparency = 1
+albedo_color = Color(0.419608, 0, 0.631373, 0.611765)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajyth"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_cwkx5")
+flip_faces = true
+
+[sub_resource type="Curve" id="Curve_ira5q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.329545, 0.865169), 0.0, 0.0, 0, 0, Vector2(0.676136, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Boom_projectale" type="CharacterBody3D"]
+script = ExtResource("1_ajyth")
+
+[node name="Area_hit" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area_hit"]
+shape = SubResource("SphereShape3D_o0w8r")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_nkth8")
+
+[node name="Area_boom" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area_boom"]
+shape = SubResource("SphereShape3D_ajyth")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.85
+mesh = SubResource("BoxMesh_ajyth")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 10.0
+linear_accel_max = 8.08
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+scale_amount_curve = SubResource("Curve_ira5q")
+
+[node name="Timer_Flee" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area_hit" to="." method="_on_area_hit_body_entered"]
+[connection signal="timeout" from="Timer_Flee" to="." method="_on_timer_flee_timeout"]

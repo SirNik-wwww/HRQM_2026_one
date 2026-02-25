@@ -1,0 +1,263 @@
+[gd_scene load_steps=28 format=3 uid="uid://cerxep8uxu7n0"]
+
+[ext_resource type="Script" uid="uid://ed7hwlbuacv7" path="res://Creatures/Enemies/kirt/kirt.gd" id="1_7j65q"]
+[ext_resource type="Texture2D" uid="uid://daevwl3i6btgw" path="res://Texture/huita/Tezti 1 LIST.png" id="1_ba3lm"]
+[ext_resource type="Script" uid="uid://er36p51ct6oj" path="res://Scripts/state_machine.gd" id="3_2i3lo"]
+[ext_resource type="Script" uid="uid://dh0sa3065aero" path="res://Creatures/Enemies/kirt/Kirt_SM/IdleKirtState.gd" id="4_otp4y"]
+[ext_resource type="Script" uid="uid://8lgfht1uixlk" path="res://Creatures/Enemies/kirt/Kirt_SM/ChaseKirtState.gd" id="5_7k2ep"]
+[ext_resource type="Script" uid="uid://yttvi5bvkant" path="res://Creatures/Enemies/kirt/Kirt_SM/AtkKirtState.gd" id="6_teus2"]
+[ext_resource type="Script" uid="uid://us7yg23xs00r" path="res://Creatures/Enemies/kirt/Kirt_SM/StanKirtState.gd" id="7_p4732"]
+[ext_resource type="Script" uid="uid://bss2nqpn422h0" path="res://Creatures/Enemies/kirt/DeadKirtState.gd" id="8_qapbq"]
+[ext_resource type="Texture2D" uid="uid://4n1xfckegc3o" path="res://Texture/huita/inter_demo/hp_bar_main_test.png" id="9_i0pwt"]
+[ext_resource type="Texture2D" uid="uid://c7e1y8xggokek" path="res://Texture/huita/inter_demo/hp_bar_lives_test.png" id="10_7ujio"]
+[ext_resource type="Script" uid="uid://cg5wu1krfhn78" path="res://Scripts/HurtBox.gd" id="11_tyjtc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46qh8"]
+height = 1.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmhyu"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0q2m"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkq5v"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pk75"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy8td"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmp55"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1h3j"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv5gq"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3win"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6q0k"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njby0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhyu")
+}],
+"loop": false,
+"name": &"akt_commit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0q2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkq5v")
+}],
+"loop": false,
+"name": &"atk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk75")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1h3j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3win")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6q0k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c45sb"]
+height = 1.0
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ke4pw"]
+height = 0.2
+radius = 0.6
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cj1kh"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ln4jo"]
+radius = 1.0
+
+[node name="kirt" type="CharacterBody3D" node_paths=PackedStringArray("DEFAULT_ST", "HURT_BOX", "COLLISION", "H_BAR", "ANIM_PL", "ATK_SHAPE_CAST") groups=["Enemy", "Needs_be_save"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_7j65q")
+DEFAULT_ST = NodePath("KirtStateMachine/IdleKirtState")
+HURT_BOX = NodePath("HurtBox")
+COLLISION = NodePath("CollisionShape3D")
+H_BAR = NodePath("SubViewport/ProgressBar")
+ANIM_PL = NodePath("AnimatedSprite3D")
+ATK_SHAPE_CAST = NodePath("Atk_ShapeCast3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_46qh8")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.5, 0)
+sprite_frames = SubResource("SpriteFrames_njby0")
+animation = &"die"
+autoplay = "idle"
+
+[node name="KirtStateMachine" type="Node" parent="." node_paths=PackedStringArray("CUR_ST")]
+script = ExtResource("3_2i3lo")
+CUR_ST = NodePath("IdleKirtState")
+
+[node name="IdleKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("4_otp4y")
+
+[node name="ChaseKirtState" type="Node" parent="KirtStateMachine" node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("5_7k2ep")
+nav_agent = NodePath("../../NavigationAgent3D")
+
+[node name="AtkKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("6_teus2")
+
+[node name="StanKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("7_p4732")
+
+[node name="DeadKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("8_qapbq")
+
+[node name="Atk_ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_c45sb")
+target_position = Vector3(0, 0.5, 0)
+collision_mask = 2
+
+[node name="Area3D_for_jump" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_for_jump"]
+shape = SubResource("CylinderShape3D_ke4pw")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="RecalcTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Random_dir_Timer" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(240, 40)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SubViewport"]
+offset_right = 250.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource("9_i0pwt")
+texture_progress = ExtResource("10_7ujio")
+texture_progress_offset = Vector2(20, 10)
+
+[node name="Label" type="Label" parent="SubViewport/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "10/10"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_cj1kh")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("11_tyjtc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_ln4jo")
+
+[connection signal="body_entered" from="Area3D_for_jump" to="." method="_on_area_3d_for_jump_body_entered"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Random_dir_Timer" to="KirtStateMachine/ChaseKirtState" method="_on_random_dir_timer_timeout"]

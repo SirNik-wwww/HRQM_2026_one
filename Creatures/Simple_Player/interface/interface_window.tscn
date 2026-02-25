@@ -1,0 +1,790 @@
+[gd_scene load_steps=3 format=3 uid="uid://qydwipdvodd5"]
+
+[ext_resource type="Script" uid="uid://da0jw8bbf3yh2" path="res://Creatures/Simple_Player/interface/interface_window.gd" id="1_3wm83"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n0yhs"]
+radius = 5.0
+height = 10.0
+
+[node name="Interface_window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("1_3wm83")
+
+[node name="V-Norm" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-Norm"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -360.0
+offset_right = 100.0
+offset_bottom = 360.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Norm/Left_0"]
+custom_minimum_size = Vector2(100, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-Norm"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Norm/Right_0"]
+custom_minimum_size = Vector2(100, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-Norm"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-Norm/down_0"]
+custom_minimum_size = Vector2(1280, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-Norm"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Norm/up_0"]
+custom_minimum_size = Vector2(1280, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-Norm"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "NORM"
+
+[node name="hp" type="MeshInstance2D" parent="V-Norm"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(48, 50)
+scale = Vector2(7.2534, 7.2534)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-Ultra_uzko" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-Ultra_uzko"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -360.0
+offset_right = 100.0
+offset_bottom = 360.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Ultra_uzko/Left_0"]
+custom_minimum_size = Vector2(200, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-Ultra_uzko"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Ultra_uzko/Right_0"]
+custom_minimum_size = Vector2(200, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-Ultra_uzko"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-Ultra_uzko/down_0"]
+custom_minimum_size = Vector2(1280, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-Ultra_uzko"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Ultra_uzko/up_0"]
+custom_minimum_size = Vector2(1280, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-Ultra_uzko"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Ultra_UZKO"
+
+[node name="hp" type="MeshInstance2D" parent="V-Ultra_uzko"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(92, 98)
+scale = Vector2(11.7359, 11.7359)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-Doom" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-Doom"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 5.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Doom/Left_0"]
+custom_minimum_size = Vector2(10, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-Doom"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Doom/Right_0"]
+custom_minimum_size = Vector2(10, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-Doom"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-Doom/down_0"]
+custom_minimum_size = Vector2(1280, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-Doom"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Doom/up_0"]
+custom_minimum_size = Vector2(1280, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-Doom"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "DOOM"
+
+[node name="hp" type="MeshInstance2D" parent="V-Doom"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(638, 52)
+scale = Vector2(7.2534, 7.2534)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-damb" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-damb"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 5.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-damb/Left_0"]
+custom_minimum_size = Vector2(250, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-damb"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-damb/Right_0"]
+custom_minimum_size = Vector2(250, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-damb"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-damb/down_0"]
+custom_minimum_size = Vector2(1280, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-damb"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-damb/up_0"]
+custom_minimum_size = Vector2(1280, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-damb"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Damb"
+
+[node name="hp" type="MeshInstance2D" parent="V-damb"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(124, 316)
+scale = Vector2(15.5402, 15.5402)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-Cool" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-Cool"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -360.0
+offset_right = 100.0
+offset_bottom = 360.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Cool/Left_0"]
+custom_minimum_size = Vector2(150, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-Cool"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Cool/Right_0"]
+custom_minimum_size = Vector2(150, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-Cool"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-Cool/down_0"]
+custom_minimum_size = Vector2(1280, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-Cool"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Cool/up_0"]
+custom_minimum_size = Vector2(1280, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-Cool"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Cool"
+
+[node name="hp" type="MeshInstance2D" parent="V-Cool"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(72, 94)
+scale = Vector2(10.4344, 10.4344)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-Bar" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-Bar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -360.0
+offset_right = 100.0
+offset_bottom = 360.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Bar/Left_0"]
+custom_minimum_size = Vector2(150, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-Bar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Bar/Right_0"]
+custom_minimum_size = Vector2(150, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-Bar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-Bar/down_0"]
+custom_minimum_size = Vector2(1280, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-Bar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-Bar/up_0"]
+custom_minimum_size = Vector2(1280, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-Bar"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Bar"
+
+[node name="hp2" type="MeshInstance2D" parent="V-Bar"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(72, 94)
+scale = Vector2(10.4344, 10.4344)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-haha" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-haha"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -360.0
+offset_right = 100.0
+offset_bottom = 360.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-haha/Left_0"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-haha"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-haha/Right_0"]
+custom_minimum_size = Vector2(150, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-haha"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -10.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-haha/down_0"]
+custom_minimum_size = Vector2(1280, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-haha"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-haha/up_0"]
+custom_minimum_size = Vector2(1280, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-haha"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "haha"
+
+[node name="hp" type="MeshInstance2D" parent="V-haha"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(96, 97)
+scale = Vector2(11.7246, 11.7246)
+mesh = SubResource("SphereMesh_n0yhs")
+
+[node name="V-free" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left_0" type="VBoxContainer" parent="V-free"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-free/Left_0"]
+custom_minimum_size = Vector2(5, 720)
+layout_mode = 2
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Right_0" type="VBoxContainer" parent="V-free"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-free/Right_0"]
+custom_minimum_size = Vector2(5, 720)
+layout_mode = 2
+size_flags_horizontal = 8
+color = Color(1, 0.372549, 1, 1)
+
+[node name="down_0" type="VBoxContainer" parent="V-free"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="V-free/down_0"]
+custom_minimum_size = Vector2(1280, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="up_0" type="VBoxContainer" parent="V-free"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="V-free/up_0"]
+custom_minimum_size = Vector2(1280, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.372549, 1, 1)
+
+[node name="Label" type="Label" parent="V-free"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "free"
+
+[node name="hp" type="MeshInstance2D" parent="V-free"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(96, 97)
+scale = Vector2(11.7246, 11.7246)
+mesh = SubResource("SphereMesh_n0yhs")

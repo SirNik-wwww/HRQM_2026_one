@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dvtplu0b28huk"]
+
+[ext_resource type="Script" uid="uid://cyt226cq1g1qu" path="res://Objects/heal_new/heal_one_.gd" id="1_apgly"]
+[ext_resource type="Texture2D" uid="uid://cvkj6k3ahna0d" path="res://Objects/heal_new/pizza_heal_1.png" id="2_g4oem"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f2i3s"]
+radius = 0.90000004
+
+[node name="Heal_one_" type="Area3D" unique_id=1779878715]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_apgly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1288280105]
+shape = SubResource("SphereShape3D_f2i3s")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1634659039]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0, 0)
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_g4oem")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

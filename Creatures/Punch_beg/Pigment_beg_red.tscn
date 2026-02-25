@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyghkr61uwwle"]
+
+[ext_resource type="Script" uid="uid://dujxgy8sgl5rd" path="res://Creatures/Punch_beg/pigment_beg_red.gd" id="1_lre0i"]
+[ext_resource type="Texture2D" uid="uid://d3dxojok515es" path="res://Texture/huita/inter_demo/Pigment_test_red.png" id="2_mctdn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2y87d"]
+radius = 0.4
+height = 1.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7ofj"]
+albedo_color = Color(1, 0.294118, 0.129412, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7r4j6"]
+material = SubResource("StandardMaterial3D_e7ofj")
+radius = 0.4
+height = 1.4
+
+[node name="Pigment_bag_red" type="CharacterBody3D"]
+collision_layer = 12
+collision_mask = 0
+script = ExtResource("1_lre0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_2y87d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_7r4j6")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+texture = ExtResource("2_mctdn")
+
+[node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+texture = ExtResource("2_mctdn")
+
+[node name="Sprite3D3" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.4, 0, 0)
+texture = ExtResource("2_mctdn")
+
+[node name="Sprite3D4" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.4, 0, 0)
+texture = ExtResource("2_mctdn")

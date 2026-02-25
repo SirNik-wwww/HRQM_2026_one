@@ -1,0 +1,177 @@
+[gd_scene load_steps=21 format=3 uid="uid://dylses7e18cm6"]
+
+[ext_resource type="Script" uid="uid://c02s4e5x27en6" path="res://Creatures/Enemies/kirt_1_new/kirt_1_new.gd" id="1_1myb1"]
+[ext_resource type="Texture2D" uid="uid://daevwl3i6btgw" path="res://Texture/huita/Tezti 1 LIST.png" id="1_f3urk"]
+[ext_resource type="Script" uid="uid://er36p51ct6oj" path="res://Scripts/state_machine.gd" id="3_f6fu5"]
+[ext_resource type="Script" uid="uid://bweg4icsqtqn4" path="res://Creatures/Enemies/kirt_1_new/IdleKirt1State.gd" id="4_f2ivq"]
+[ext_resource type="Script" uid="uid://cj5pfprgr081u" path="res://Creatures/Enemies/kirt_1_new/ChaseKirt1State.gd" id="5_4pwcd"]
+[ext_resource type="Script" uid="uid://jvlqp0trnw5j" path="res://Creatures/Enemies/kirt_1_new/AtkKirt1State.gd" id="6_wf027"]
+[ext_resource type="Script" uid="uid://bimmq6btropug" path="res://Creatures/Enemies/kirt_1_new/StanKirt1State.gd" id="7_1njeo"]
+[ext_resource type="Script" uid="uid://y5msh8eqoj5o" path="res://Creatures/Enemies/kirt_1_new/DeadKirt1State.gd" id="8_t8mkd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cib8k"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmhyu"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0q2m"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkq5v"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pk75"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy8td"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmp55"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1h3j"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv5gq"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3win"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6q0k"]
+atlas = ExtResource("1_f3urk")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_encpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhyu")
+}],
+"loop": false,
+"name": &"akt_commit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0q2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkq5v")
+}],
+"loop": false,
+"name": &"atk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk75")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1h3j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3win")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6q0k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="kirt-1_new" type="CharacterBody3D" groups=["Needs_be_save"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+collision_layer = 12
+collision_mask = 3
+script = ExtResource("1_1myb1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_cib8k")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.7, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_encpr")
+animation = &"die"
+autoplay = "idle"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="RecalcTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="KirtStateMachine" type="Node" parent="." node_paths=PackedStringArray("CUR_ST")]
+script = ExtResource("3_f6fu5")
+CUR_ST = NodePath("IdleKirt1State")
+
+[node name="IdleKirt1State" type="Node" parent="KirtStateMachine" groups=["Player_is_near"]]
+script = ExtResource("4_f2ivq")
+
+[node name="ChaseKirt1State" type="Node" parent="KirtStateMachine"]
+script = ExtResource("5_4pwcd")
+
+[node name="AtkKirt1State" type="Node" parent="KirtStateMachine"]
+script = ExtResource("6_wf027")
+
+[node name="StanKirt1State" type="Node" parent="KirtStateMachine"]
+script = ExtResource("7_1njeo")
+
+[node name="DeadKirt1State" type="Node" parent="KirtStateMachine"]
+script = ExtResource("8_t8mkd")

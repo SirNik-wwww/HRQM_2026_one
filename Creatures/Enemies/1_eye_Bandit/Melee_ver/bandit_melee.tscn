@@ -1,0 +1,461 @@
+[gd_scene load_steps=29 format=3 uid="uid://bwty10mcp54le"]
+
+[ext_resource type="Script" uid="uid://rcjwfnacri4a" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/bandit_melee.gd" id="1_0av6q"]
+[ext_resource type="Texture2D" uid="uid://cw8qojdmr7xkg" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/B_Melee_Sp_list.png" id="1_qfiv2"]
+[ext_resource type="Script" uid="uid://er36p51ct6oj" path="res://Scripts/state_machine.gd" id="2_0av6q"]
+[ext_resource type="Texture2D" uid="uid://b5shp620nnem3" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/splash.png" id="3_nftuc"]
+[ext_resource type="Script" uid="uid://bdgenccevmvjw" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/B_Melee_StM/IdleBandit_MState.gd" id="4_0av6q"]
+[ext_resource type="Script" uid="uid://dkcbwmv3mwhp3" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/B_Melee_StM/ChaseBandit_MState.gd" id="5_nftuc"]
+[ext_resource type="Script" uid="uid://dwwbbjhbsib7y" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/B_Melee_StM/WarningBandit_MState.gd" id="6_d06nt"]
+[ext_resource type="Script" uid="uid://cegptamcgp6qd" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/B_Melee_StM/AtkBandit_MState.gd" id="6_v030y"]
+[ext_resource type="Script" uid="uid://dnwaiycsr0map" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/B_Melee_StM/StanBandit_MState.gd" id="7_cwfnq"]
+[ext_resource type="Texture2D" uid="uid://4n1xfckegc3o" path="res://Texture/huita/inter_demo/hp_bar_main_test.png" id="8_nxeac"]
+[ext_resource type="Texture2D" uid="uid://c7e1y8xggokek" path="res://Texture/huita/inter_demo/hp_bar_lives_test.png" id="9_trn73"]
+[ext_resource type="Script" uid="uid://cg5wu1krfhn78" path="res://Scripts/HurtBox.gd" id="10_5ohoy"]
+[ext_resource type="AudioStream" uid="uid://dt4amw1g7o5jn" path="res://Sound/SE/voices/крехтение - 6 (почти крик).wav" id="13_cwfnq"]
+[ext_resource type="AudioStream" uid="uid://b6y5y5llx6f0" path="res://Creatures/Enemies/1_eye_Bandit/Melee_ver/395338__ihitokage__swish-1.ogg" id="13_v030y"]
+[ext_resource type="AudioStream" uid="uid://cocysyc1xlrmo" path="res://Sound/SE/Something/body-falling-on-the-ground-1__(ihitokage).wav" id="15_d06nt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c7evq"]
+radius = 0.3
+height = 1.7
+
+[sub_resource type="Animation" id="Animation_nftuc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:billboard")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.912168, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nxeac"]
+resource_name = "atk"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_d06nt"]
+resource_name = "atk_commit"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.223861, 0.185601, 0.2), Vector3(0.2, 0.2, 0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.834658, 0), Vector3(0, 0.912168, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_72kkq"]
+resource_name = "die"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.137451, 0.14),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.177192, 0.233012, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(0.287892, 0.13454, 0.2), Vector3(0.2, 0.2, 0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.137451, 0.14),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.05846, 0), Vector3(0, 0.89926, 0), Vector3(0, 0.598, 0), Vector3(0, 0.89926, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0av6q"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.912168, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cwfnq"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_v030y"]
+resource_name = "warning"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:billboard")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2), Vector3(0.145731, 0.274449, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(0.164069, 0.216068, 0.2), Vector3(0.2, 0.2, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.912168, 0), Vector3(0, 1.20397, 0), Vector3(0, 0.912168, 0), Vector3(0, 0.962202, 0), Vector3(0, 0.912168, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v030y"]
+_data = {
+&"RESET": SubResource("Animation_nftuc"),
+&"atk": SubResource("Animation_nxeac"),
+&"atk_commit": SubResource("Animation_d06nt"),
+&"die": SubResource("Animation_72kkq"),
+&"idle": SubResource("Animation_0av6q"),
+&"walk": SubResource("Animation_cwfnq"),
+&"warning": SubResource("Animation_v030y")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uney4"]
+height = 1.0
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_val6h"]
+height = 0.2
+radius = 0.6
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d06nt"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2li67"]
+height = 2.2
+radius = 1.0
+
+[node name="Bandit_Melee" type="CharacterBody3D" node_paths=PackedStringArray("ATK_SHAPE_CAST", "DEFAULT_ST", "HURT_BOX", "COLLISION", "H_BAR", "SPRITE", "ANIM_PL", "hp_label", "pain") groups=["Enemy", "Needs_be_save"]]
+collision_layer = 20
+collision_mask = 7
+script = ExtResource("1_0av6q")
+ATK_SHAPE_CAST = NodePath("Atk_ShapeCast3D")
+DEFAULT_ST = NodePath("Bandit_MStateMachine/IdleBandit_MState")
+HURT_BOX = NodePath("HurtBox")
+COLLISION = NodePath("CollisionShape3D")
+H_BAR = NodePath("SubViewport/ProgressBar")
+SPRITE = NodePath("Main_Sprite")
+ANIM_PL = NodePath("AnimationPlayer")
+hp_label = NodePath("SubViewport/ProgressBar/Label")
+pain = NodePath("Pain")
+metadata/_custom_type_script = "uid://b6lekoy8e4e6t"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_c7evq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Main_Sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_v030y")
+}
+autoplay = "idle"
+
+[node name="Main_Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 4.76837e-08, 0, 0.2, 0, -4.76837e-08, 0, 0.2, 0, 0.912168, 0)
+alpha_cut = 1
+texture = ExtResource("1_qfiv2")
+hframes = 2
+vframes = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912168, 0)
+skeleton = NodePath("../Main_Sprite")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.211325, -0.0184885, -0.212132, 0.211325, 0.0184886, -0.212132, 0.0261468, -0.298858, -9.27259e-09, 0.0222269, 0, -0.7)
+visible = false
+texture = ExtResource("3_nftuc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D/Sprite3D"]
+transform = Transform3D(-4.37114e-08, 0, -0.999999, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("3_nftuc")
+
+[node name="Bandit_MStateMachine" type="Node" parent="." node_paths=PackedStringArray("CUR_ST")]
+script = ExtResource("2_0av6q")
+CUR_ST = NodePath("IdleBandit_MState")
+
+[node name="IdleBandit_MState" type="Node" parent="Bandit_MStateMachine"]
+script = ExtResource("4_0av6q")
+
+[node name="WarningBandit_MState" type="Node" parent="Bandit_MStateMachine"]
+script = ExtResource("6_d06nt")
+
+[node name="ChaseBandit_MState" type="Node" parent="Bandit_MStateMachine" node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("5_nftuc")
+nav_agent = NodePath("../../NavigationAgent3D")
+
+[node name="AtkBandit_MState" type="Node" parent="Bandit_MStateMachine"]
+script = ExtResource("6_v030y")
+
+[node name="StanBandit_MState" type="Node" parent="Bandit_MStateMachine"]
+script = ExtResource("7_cwfnq")
+
+[node name="Atk_ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_uney4")
+target_position = Vector3(0, 0.5, 0)
+collision_mask = 2
+
+[node name="Area3D_for_jump" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_for_jump"]
+shape = SubResource("CylinderShape3D_val6h")
+
+[node name="Jump_Timer" type="Timer" parent="Area3D_for_jump"]
+one_shot = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="RecalcTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Random_dir_Timer" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(240, 40)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SubViewport"]
+offset_right = 250.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource("8_nxeac")
+texture_progress = ExtResource("9_trn73")
+texture_progress_offset = Vector2(20, 10)
+
+[node name="Label" type="Label" parent="SubViewport/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "10/10"
+
+[node name="Hp_Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_d06nt")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("10_5ohoy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CylinderShape3D_2li67")
+
+[node name="Pain" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+stream = ExtResource("13_cwfnq")
+bus = &"Sound_Effects"
+
+[node name="Atk_commit" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+stream = ExtResource("13_v030y")
+bus = &"Sound_Effects"
+
+[node name="Pre_Atk" type="AudioStreamPlayer3D" parent="Atk_commit"]
+stream = ExtResource("15_d06nt")
+volume_db = -4.0
+max_db = 0.0
+bus = &"Sound_Effects"
+
+[connection signal="body_entered" from="Area3D_for_jump" to="." method="_on_area_3d_for_jump_body_entered"]
+[connection signal="timeout" from="Area3D_for_jump/Jump_Timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="Random_dir_Timer" to="Bandit_MStateMachine/ChaseBandit_MState" method="_on_random_dir_timer_timeout"]

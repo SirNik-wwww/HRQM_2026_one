@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://helutd6pivxc"
+
+[deps]
+
+files=["res://Resources/dialogue_syst/Translations/Translation_godot_1_st.en.translation", "res://Resources/dialogue_syst/Translations/Translation_godot_1_st.ru.translation"]
+
+source_file="res://Resources/dialogue_syst/Translations/Translation_godot_1_st.csv"
+dest_files=["res://Resources/dialogue_syst/Translations/Translation_godot_1_st.en.translation", "res://Resources/dialogue_syst/Translations/Translation_godot_1_st.ru.translation"]
+
+[params]
+
+compress=true
+delimiter=1

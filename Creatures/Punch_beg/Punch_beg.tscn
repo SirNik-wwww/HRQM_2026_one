@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxvr7s53n1q6r"]
+
+[ext_resource type="Script" uid="uid://ddl726ys2vqt6" path="res://Creatures/Punch_beg/punch_beg.gd" id="1_kwoe2"]
+[ext_resource type="Texture2D" uid="uid://beh84qp2l7idf" path="res://Texture/huita/uZbDEnvOkk0.jpg" id="1_p0ou8"]
+[ext_resource type="Texture2D" uid="uid://dxkivhnkohpm6" path="res://Texture/huita/zdGtqQjZ4Hj-OyP6Nj5CH8xcMsNPyuGpbM7j1y3-s_AwuONAfDyoaTtH_jj8FTtGzDMiOseXnEqmfjvz7IkF6zb.jpg" id="2_cpvfd"]
+[ext_resource type="Texture2D" uid="uid://bgtkgejk1qlrd" path="res://Texture/huita/icon.svg" id="3_tsta2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvi2i"]
+atlas = ExtResource("2_cpvfd")
+region = Rect2(0, 0, 1080, 1100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts4px"]
+atlas = ExtResource("3_tsta2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaueu"]
+atlas = ExtResource("1_p0ou8")
+region = Rect2(0, 0, 781, 771)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1e8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvi2i")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts4px")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaueu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cy3qn"]
+radius = 0.6
+height = 1.6
+
+[node name="Punch_beg" type="CharacterBody3D"]
+collision_layer = 13
+script = ExtResource("1_kwoe2")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_h1e8p")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_cy3qn")

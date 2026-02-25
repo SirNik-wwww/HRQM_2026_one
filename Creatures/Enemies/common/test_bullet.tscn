@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcmx6romqkyc2"]
+
+[ext_resource type="Script" uid="uid://dyn0ylenncw2k" path="res://Creatures/Enemies/common/test_bullet.gd" id="1_o4j70"]
+[ext_resource type="Texture2D" uid="uid://dmi4fi1po27xt" path="res://Creatures/Enemies/common/Skull_Bullet.png" id="2_35577"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6lv5f"]
+radius = 0.2
+
+[node name="test_bullet" type="CharacterBody3D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_o4j70")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.385, 0, 0, 0, 0.385, 0, 0, 0, 0.385, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_35577")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_6lv5f")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

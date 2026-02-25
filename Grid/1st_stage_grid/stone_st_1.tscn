@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d03gh1lddei5h"]
+
+[ext_resource type="Texture2D" uid="uid://dmf7dq6g21txl" path="res://Grid/1st_stage_grid/STONE.png" id="1_16ou3"]
+
+[node name="Stone_st_1" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.242491, 0, 0.242491, 0, 0.342935, 0, -0.242491, 0, 0.242491, 0, 0.600106, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_16ou3")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.242491, 0, -0.242492, 0, 0.342935, 0, 0.242492, 0, 0.242491, 0, 0.600106, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_16ou3")

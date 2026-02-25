@@ -1,0 +1,1733 @@
+[gd_scene format=3 uid="uid://qibiu6ia020f"]
+
+[ext_resource type="Script" uid="uid://b6p86s1kwgsc7" path="res://Creatures/Simple_Player/weapons/nunchucks.gd" id="1_7h81a"]
+[ext_resource type="Texture2D" uid="uid://d2j4tdgcjmvy0" path="res://Creatures/Simple_Player/interface/combo/C O M B O Bord.png" id="2_qmxpv"]
+[ext_resource type="Texture2D" uid="uid://dwc6adfbifw7p" path="res://Texture/huita/новое1002323232300_ALT.png" id="2_wvmrn"]
+[ext_resource type="Texture2D" uid="uid://mtyy68oaky01" path="res://Texture/huita/combo-sheet_test_ALT.png" id="3_n2yna"]
+[ext_resource type="Script" uid="uid://dt8dr1my174wq" path="res://Scripts/HitBox.gd" id="3_rj0ir"]
+[ext_resource type="FontFile" uid="uid://dahdfiea3bk71" path="res://Resources/dialogue_syst/Share Tech CYR/Share-Tech-CYR-Italic-Bold.otf" id="6_yqnxr"]
+[ext_resource type="AudioStream" uid="uid://delny18hhgyj6" path="res://Sound/SE/punches/(CUT_1)_artninja__custom_tmnt_2012_inspired_lowendheavyimpactpunch_with_and_without_whip_cracks_02192025.wav" id="9_n2yna"]
+[ext_resource type="AudioStream" uid="uid://c1t0pebhx3tlq" path="res://Sound/SE/punches/472687__silverillusionist__torch-swing.wav" id="9_qmxpv"]
+[ext_resource type="AudioStream" uid="uid://c2ngbva68j144" path="res://Sound/SE/punches/395340__ihitokage__woosh-5.ogg" id="9_wvmrn"]
+[ext_resource type="AudioStream" uid="uid://0ttj8jvec55w" path="res://Sound/SE/Something/(Pich)_fastforwardsoundeffects__orchestra-stab.wav" id="9_yqnxr"]
+[ext_resource type="AudioStream" uid="uid://gxmldbi2ebrc" path="res://Sound/SE/punches/(CUT_2)_artninja__custom_tmnt_2012_inspired_lowendheavyimpactpunch_with_and_without_whip_cracks_02192025.wav" id="10_wvmrn"]
+[ext_resource type="AudioStream" uid="uid://dah8btvekxler" path="res://Sound/SE/punches/651023__nomiqbomi__lazer-01.mp3" id="13_qmxpv"]
+[ext_resource type="Texture2D" uid="uid://dkjel002c60if" path="res://Texture/yes/menu window.png" id="13_wubcq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n2yna"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6cmlw"]
+size = Vector3(0.4, 0.2, 1.4)
+
+[sub_resource type="Animation" id="Animation_db2qv"]
+resource_name = "NULL"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.39295, 0.268366, 0.232248)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.17, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6, 0.291651, 0.275781)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.11643, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xjx7n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.275967, 0.269964, 0.492221)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.0472, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6, 0.9, 0.8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [19]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0368776, -0.0518975, -0.042064)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.02139, 0.199531, 0.462309)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("se_hit/se_hit_special/se_special_2:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_v2m1g"]
+resource_name = "atk_left"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.39295, 0.268366, 0.232248)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.17, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 6]
+}
+
+[sub_resource type="Animation" id="Animation_lb8k7"]
+resource_name = "atk_left_ALT"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0387322, 0.04, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.39295, 0.268366, 0.232248), Vector3(-0.354579, 0.268366, 0.242251), Vector3(-0.780467, 0.268366, 0.538934), Vector3(-0.39295, 0.268366, 0.232248)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0387322, 0.04, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.17, 0, 0), Vector3(-1.17, -0.279881, -3.59004e-09), Vector3(-1.17, 1.12457, 0), Vector3(-1.17, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 6]
+}
+
+[sub_resource type="Animation" id="Animation_0ro0i"]
+resource_name = "atk_mid"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.166082, -1.2062, 0.764412), Vector3(-0.166082, -1.2062, 0.764412), Vector3(-0.138831, -1.25872, 2.86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.49295, 0.268366, 0.232248), Vector3(-0.49295, 0.268366, 0.232248), Vector3(-0.49295, -0.531634, 0.232248)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 3, 6]
+}
+
+[sub_resource type="Animation" id="Animation_w0dut"]
+resource_name = "atk_mid_ALT"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.166082, -1.2062, 0.764412), Vector3(-0.166082, -1.2062, 0.764412), Vector3(-0.138831, -1.25872, 2.86), Vector3(-0.1492, -1.26342, 2.89274)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.49295, 0.268366, 0.232248), Vector3(-0.49295, 0.268366, 0.232248), Vector3(-0.337337, -0.455013, 0.562526), Vector3(-0.337337, -0.455013, 0.577644)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 6]
+}
+
+[sub_resource type="Animation" id="Animation_45fhi"]
+resource_name = "atk_right"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.39295, 0.268366, 0.232248)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.17, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_30bq6"]
+resource_name = "atk_right_ALT"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-new:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.165616, 0.17, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.39295, 0.268366, 0.232248), Vector3(-0.454893, 0.268366, 0.270403), Vector3(-0.91212, 0.268366, 0.457835), Vector3(-0.39295, 0.268366, 0.232248), Vector3(-0.426094, 0.268366, 0.232248)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-new:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.165616, 0.17, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.17, 0, 0), Vector3(-1.17, -0.000849957, 1.3462e-08), Vector3(-1.17, 1.23676, -3.08527e-08), Vector3(-1.17, 0, 0), Vector3(-1.17, 0.0770912, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j4a7k"]
+resource_name = "ball-dir-1"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [33]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.843143, 0.071241, 0.478199), Vector3(-0.843143, 0.071241, 0.496147)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.24707, 2.55129, 2.16447), Vector3(-1.24707, 2.43725, 2.16447)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [34]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0960803, 2.7099, 1.19308)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.240806, 0.336147, 3.11325)]
+}
+
+[sub_resource type="Animation" id="Animation_e7d14"]
+resource_name = "ball-dir-2"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.56352, -0.0125146, 0.381082)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.14536, 1.66055, -1.5347)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.813463, -0.684376, -0.481892)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.317515, 1.60682, -0.00698423)]
+}
+
+[sub_resource type="Animation" id="Animation_wvmrn"]
+resource_name = "coun_atk_1"
+length = 1.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.563741, 0.260521, 0.377518), Vector3(-0.563741, 0.260521, 0.377518), Vector3(-0.563741, 0.205859, 0.377518)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.1067, -0.734248, 0.790055), Vector3(-1.1067, -0.734248, 0.790055), Vector3(-1.20394, -0.990243, 1.06923)]
+}
+
+[sub_resource type="Animation" id="Animation_n2yna"]
+resource_name = "coun_atk_2"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0466883, 0.05, 0.246748, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.563741, 0.260521, 0.377518), Vector3(-0.563741, 0.108726, 0.377518), Vector3(-0.498591, 0.366097, 0.189161), Vector3(-0.498591, 0.366097, 0.189161), Vector3(-0.471154, 0.292408, 0.223017)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0466883, 0.05, 0.246748, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.1067, -0.734248, 0.790055), Vector3(-1.25944, -1.77615, 1.8972), Vector3(-0.0927142, -1.27502, 0.616648), Vector3(-0.0927142, -1.27502, 0.616648), Vector3(-0.0726846, -1.05619, 0.763471)]
+}
+
+[sub_resource type="Animation" id="Animation_cag7f"]
+resource_name = "diagonal"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.326356, 0.306085, 0.202009), Vector3(-0.326356, 0.306085, 0.202009), Vector3(-0.289708, 0.293626, 0.202009)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.839878, 0.762029, -0.886273), Vector3(-0.839878, 0.762029, -0.886273), Vector3(-0.794935, 0.73732, -0.951866)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 0]
+}
+
+[sub_resource type="Animation" id="Animation_yqnxr"]
+resource_name = "diagonal_2"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.532212, 0.329175, 0.256117), Vector3(-0.532212, 0.329175, 0.256117), Vector3(-0.546985, 0.308781, 0.256117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.810112, -0.619762, 0.633142), Vector3(-0.810112, -0.619762, 0.633142), Vector3(-0.795522, -0.588307, 0.665428)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 0]
+}
+
+[sub_resource type="Animation" id="Animation_1i8lo"]
+resource_name = "direct"
+length = 0.4
+step = 0.005
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [27, 28, 29, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.095, 0.1, 0.395),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.597794, 0.237694, 0.433157), Vector3(-0.597794, 0.237694, 0.48232), Vector3(-0.597794, 0.237694, 0.433157), Vector3(-0.597794, 0.237694, 0.412412)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.095, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.17852, 0.261284, -0.656732), Vector3(-1.18504, 0.311288, -0.582287), Vector3(-1.15795, 0.401439, -0.809012)]
+}
+
+[sub_resource type="Animation" id="Animation_hpxey"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-new:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_1pvfx"]
+resource_name = "left_int"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.850382, 0.323519, 0.278833), Vector3(-0.492943, 0.323519, 0.278833), Vector3(-0.492943, 0.323519, 0.278833), Vector3(-0.352426, 0.323519, 0.364693)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.02344, 0.484779, -0.41769), Vector3(-1.02344, 0.325204, -0.41769), Vector3(-1.02344, 0.325204, -0.41769), Vector3(-1.02344, 0.0935464, -0.41769)]
+}
+
+[sub_resource type="Animation" id="Animation_wubcq"]
+resource_name = "middle_finger"
+length = 0.6
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [18, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.85661, 0.189554, 0.462407), Vector3(-0.85661, 0.284698, 0.377343), Vector3(-0.85661, 0.297169, 0.377343), Vector3(-0.85661, 0.284698, 0.377343)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.07409, 1.31374, -1.54876), Vector3(-0.839878, 0.762029, -0.886273)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [19, 20, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.142282, 0.115422, -0.323229)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.936095, 0.0753494, 0.27541)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("se_hit/se_hit_special/se_special_2:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4873y"]
+resource_name = "right_ext"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.496223, 0.323519, 0.416232), Vector3(-0.646447, 0.323519, 0.372502), Vector3(-0.646447, 0.323519, 0.372502), Vector3(-0.673876, 0.304853, 0.365419)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.1667, -2.92872, -0.145673), Vector3(1.1667, -2.87568, -0.145673), Vector3(1.1667, -2.87568, -0.145673), Vector3(1.1667, -2.83332, -0.145673)]
+}
+
+[sub_resource type="Animation" id="Animation_fs5ym"]
+resource_name = "slap"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [30, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.13, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.866967, -0.114357, 0.35069), Vector3(-0.955277, -0.114357, 0.35069), Vector3(-0.866967, -0.114357, 0.35069), Vector3(-0.42424, -0.114357, 0.35069), Vector3(-0.3965, -0.114357, 0.35069)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.13, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.335051, 1.72541, -1.2127), Vector3(-0.335051, 2.01397, -1.2127), Vector3(-0.335051, 1.72541, -1.2127), Vector3(-0.335051, 1.05253, -1.2127), Vector3(-0.335051, 0.984326, -1.2127)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.165538, 0.424296, -0.155224), Vector3(-0.165538, 0.424296, -0.155224), Vector3(-0.13035, 0.453316, -0.0897877)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.122692, 0.168353, 0.235798), Vector3(0.122692, 0.168353, 0.235798), Vector3(0.58018, 0.477783, 0.343686)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [31]
+}
+
+[sub_resource type="Animation" id="Animation_qmxpv"]
+resource_name = "trigger_fingers"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.795624, 0.224887, 0.174886)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.410654, 1.16439, -1.39122)]
+}
+
+[sub_resource type="Animation" id="Animation_8h05o"]
+resource_name = "uppercut"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.24, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.06, 0.14, 0.24, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.767741, 0.232654, 0.249207), Vector3(-0.767741, 0.192128, 0.249207), Vector3(-0.767741, 0.232654, 0.249207), Vector3(-0.767741, 0.292371, 0.249207), Vector3(-0.767741, 0.292371, 0.249207), Vector3(-0.767741, 0.306309, 0.249207)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.06, 0.14, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0281748, 1.18392, -0.361354), Vector3(0.00190652, 1.18296, -0.425726), Vector3(0.0281748, 1.18392, -0.361354), Vector3(0.0492718, 1.18594, -0.309394), Vector3(0.0492718, 1.18594, -0.309394)]
+}
+
+[sub_resource type="Animation" id="Animation_1f7sh"]
+resource_name = "uppercut_alt"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nunchucks/Sprite3D-combo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [18]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [19]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_130o2"]
+_data = {
+&"NULL": SubResource("Animation_db2qv"),
+&"RESET": SubResource("Animation_xjx7n"),
+&"atk_left": SubResource("Animation_v2m1g"),
+&"atk_left_ALT": SubResource("Animation_lb8k7"),
+&"atk_mid": SubResource("Animation_0ro0i"),
+&"atk_mid_ALT": SubResource("Animation_w0dut"),
+&"atk_right": SubResource("Animation_45fhi"),
+&"atk_right_ALT": SubResource("Animation_30bq6"),
+&"ball-dir-1": SubResource("Animation_j4a7k"),
+&"ball-dir-2": SubResource("Animation_e7d14"),
+&"coun_atk_1": SubResource("Animation_wvmrn"),
+&"coun_atk_2": SubResource("Animation_n2yna"),
+&"diagonal": SubResource("Animation_cag7f"),
+&"diagonal_2": SubResource("Animation_yqnxr"),
+&"direct": SubResource("Animation_1i8lo"),
+&"idle": SubResource("Animation_hpxey"),
+&"left_int": SubResource("Animation_1pvfx"),
+&"middle_finger": SubResource("Animation_wubcq"),
+&"right_ext": SubResource("Animation_4873y"),
+&"slap": SubResource("Animation_fs5ym"),
+&"trigger_fingers": SubResource("Animation_qmxpv"),
+&"uppercut": SubResource("Animation_8h05o"),
+&"uppercut_alt": SubResource("Animation_1f7sh")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_4x48p"]
+size = Vector3(0.01, 2, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5yurc"]
+size = Vector3(0.4, 0.2, 2.1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_db2qv"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2yna"]
+atlas = ExtResource("2_qmxpv")
+region = Rect2(92.8, 63.4621, 640.2, 452.553)
+
+[node name="Weapons" type="Node3D" unique_id=1007216358 node_paths=PackedStringArray("SE_WOOSH", "SE_WOOSH_SPEC", "SE_HIT", "SE_HIT_SPEC", "SE_LASER", "TARGET", "anim_pl", "combo_text_small", "combo_text_mid", "combo_text", "combo_timer", "nun_ShC", "Bar", "Melee_spite", "Combo_sp", "COMBO_SP_2") groups=["Coun_atk", "hide_after_enter_control_set", "show_after_quit_control_set"]]
+script = ExtResource("1_7h81a")
+SE_WOOSH = NodePath("se_woosh")
+SE_WOOSH_SPEC = NodePath("se_woosh/se_woosh_spec")
+SE_HIT = NodePath("se_hit")
+SE_HIT_SPEC = NodePath("se_hit/se_hit_special")
+SE_LASER = NodePath("se_hit/se_laser")
+TARGET = NodePath("Nunchucks/Marker3D")
+anim_pl = NodePath("Nunchucks/AnimationPlayer")
+combo_text_small = NodePath("SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/down/Label_sml")
+combo_text_mid = NodePath("SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/down/Label_mid")
+combo_text = NodePath("SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/down/Label")
+combo_timer = NodePath("Timer")
+nun_ShC = NodePath("Nunchucks/RayCast3D")
+Bar = NodePath("SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/mid")
+Melee_spite = NodePath("Nunchucks/Sprite3D-new")
+Combo_sp = NodePath("Nunchucks/Sprite3D-combo")
+COMBO_SP_2 = NodePath("Nunchucks/Sprite3D-combo/Sprite3D-combo-2")
+
+[node name="Combo" type="Node3D" parent="." unique_id=1831126770]
+transform = Transform3D(0.290971, -0.00809961, -0.0725985, 0, 0.29815, -0.0332638, 0.0730489, 0.0322626, 0.289176, 0.6, 0.9, -0.5)
+
+[node name="Desk" type="Sprite3D" parent="Combo" unique_id=1783168278]
+transform = Transform3D(0.5, -5.39568e-09, -7.19424e-09, 5.39568e-09, 0.5, 3.59712e-09, 7.19424e-09, -3.59712e-09, 0.5, 0, 0, 0)
+layers = 2
+texture = SubResource("ViewportTexture_n2yna")
+
+[node name="Nunchucks" type="Node3D" parent="." unique_id=1604069459]
+
+[node name="atk_ShapeCast" type="ShapeCast3D" parent="Nunchucks" unique_id=369710942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, -0.6, 1.3, -0.2)
+enabled = false
+shape = SubResource("BoxShape3D_6cmlw")
+collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nunchucks" unique_id=1129301499]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_130o2")
+autoplay = &"idle"
+
+[node name="Sprite3D-new" type="Sprite3D" parent="Nunchucks" unique_id=2067673508]
+transform = Transform3D(0.17, 0, 0, 0, 0.0663255, 0.156527, 0, -0.156527, 0.0663255, -0.39295, 0.268366, 0.232248)
+alpha_cut = 1
+texture = ExtResource("2_wvmrn")
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="Sprite3D-combo" type="Sprite3D" parent="Nunchucks" unique_id=1885880654]
+transform = Transform3D(0.169999, 0, 0, 0, 0.0746124, 0.152751, 0, -0.152753, 0.0746115, -0.6, 0.291651, 0.275781)
+alpha_cut = 1
+texture = ExtResource("3_n2yna")
+hframes = 3
+vframes = 12
+
+[node name="Sprite3D-combo-2" type="Sprite3D" parent="Nunchucks/Sprite3D-combo" unique_id=1283781965]
+transform = Transform3D(-0.945883, 0.0518804, 0.320334, 0.0275214, -0.970757, 0.238485, 0.32334, 0.234396, 0.916793, 0.0960803, 2.7099, 1.19308)
+visible = false
+alpha_cut = 1
+texture = ExtResource("3_n2yna")
+hframes = 3
+vframes = 12
+frame = 34
+
+[node name="RayCast3D" type="RayCast3D" parent="Nunchucks" unique_id=745409441]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.6, 0.3, 0.9)
+target_position = Vector3(0, -2, 0)
+collision_mask = 8
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Nunchucks/RayCast3D" unique_id=1625260166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4.3714e-08)
+visible = false
+mesh = SubResource("BoxMesh_4x48p")
+
+[node name="HitBox" type="Area3D" parent="Nunchucks" unique_id=1548596496]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_rj0ir")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nunchucks/HitBox" unique_id=439276119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, -0.25)
+shape = SubResource("BoxShape3D_5yurc")
+
+[node name="Marker3D" type="Marker3D" parent="Nunchucks" unique_id=84948605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.668648, 0.249077, -0.0123503)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Nunchucks/Marker3D" unique_id=226382096]
+visible = false
+mesh = SubResource("SphereMesh_db2qv")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=508809105]
+transparent_bg = true
+size = Vector2i(640, 450)
+size_2d_override_stretch = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=925127416]
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/CanvasLayer" unique_id=1020684958]
+offset_right = 640.0
+offset_bottom = 452.0
+texture = SubResource("AtlasTexture_n2yna")
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CanvasLayer/TextureRect" unique_id=1924526913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer" unique_id=883048294]
+layout_mode = 2
+
+[node name="up" type="HBoxContainer" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer" unique_id=359319847]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="mid" type="HBoxContainer" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer" unique_id=1313392856]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="down" type="HBoxContainer" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer" unique_id=262250705]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="Label_sml" type="Label" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/down" unique_id=1203679827]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("6_yqnxr")
+theme_override_font_sizes/font_size = 65
+text = "0"
+
+[node name="Label_mid" type="Label" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/down" unique_id=721253868]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("6_yqnxr")
+theme_override_font_sizes/font_size = 80
+text = "Test"
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer/VBoxContainer/down" unique_id=1279258798]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("6_yqnxr")
+theme_override_font_sizes/font_size = 90
+text = "Test"
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer/TextureRect/MarginContainer" unique_id=291419688]
+visible = false
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=852034871]
+wait_time = 8.0
+one_shot = true
+
+[node name="se_woosh" type="AudioStreamPlayer" parent="." unique_id=1364723663]
+stream = ExtResource("9_wvmrn")
+bus = &"Sound_Effects"
+
+[node name="se_woosh_spec" type="AudioStreamPlayer" parent="se_woosh" unique_id=146192473]
+stream = ExtResource("9_qmxpv")
+bus = &"Sound_Effects"
+
+[node name="se_hit" type="AudioStreamPlayer" parent="." unique_id=532177887]
+stream = ExtResource("9_n2yna")
+volume_db = -5.0
+bus = &"Sound_Effects"
+
+[node name="se_hit_special" type="AudioStreamPlayer" parent="se_hit" unique_id=103131741]
+stream = ExtResource("10_wvmrn")
+bus = &"Sound_Effects"
+
+[node name="se_special_2" type="AudioStreamPlayer" parent="se_hit/se_hit_special" unique_id=2138087641]
+stream = ExtResource("9_yqnxr")
+bus = &"Sound_Effects"
+
+[node name="se_laser" type="AudioStreamPlayer" parent="se_hit" unique_id=112446536]
+stream = ExtResource("13_qmxpv")
+volume_db = -2.0
+pitch_scale = 1.8
+bus = &"Sound_Effects"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=22924886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.603284, 0.296702, 0.905688)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=4144451]
+layer = 5
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1805774674]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Control" unique_id=8470043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/Control/HBoxContainer" unique_id=1610691646]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer" unique_id=1703259834]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer" unique_id=1060228989]
+layout_mode = 2
+
+[node name="test" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=259359830 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+text = "left ◐
+right ◑
+up ◓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Diagonal" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=325910012 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "DIAGONAL ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Diagonal_2" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1148611367 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "DIAGONAL_2 ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TRIGGER_FINGERS" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=706543133 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 17
+theme_override_font_sizes/bold_italics_font_size = 17
+theme_override_font_sizes/italics_font_size = 17
+theme_override_font_sizes/mono_font_size = 17
+text = "TRIGGER_FINGERS ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="COUNTERATTACK" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=345088690 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "counteratk ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FCK" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1410415133 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "fuck ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UPPERCUT" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=887952241 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "UPPERCUT ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RIGHT_INTRUSION" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=911861456 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 17
+theme_override_font_sizes/bold_italics_font_size = 17
+theme_override_font_sizes/italics_font_size = 17
+theme_override_font_sizes/mono_font_size = 17
+text = "RIGHT_INTRUSION ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LEFT_EXTRUSION" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=203386075 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 17
+theme_override_font_sizes/bold_italics_font_size = 17
+theme_override_font_sizes/italics_font_size = 17
+theme_override_font_sizes/mono_font_size = 17
+text = "LEFT_EXTRUSION ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SLAP" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=2142284121 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "SLAP ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DIR" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=985788852 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "DIR ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CURSE-BALL" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1946232986 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 19
+theme_override_font_sizes/bold_italics_font_size = 19
+theme_override_font_sizes/italics_font_size = 19
+theme_override_font_sizes/mono_font_size = 23
+text = "CURSE-BALL ◑ ◑ ◑ ◑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fail" type="RichTextLabel" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1089404430 groups=["kombo_label"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+text = "Fail (any)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer2/Control/HBoxContainer/MarginContainer" unique_id=627138282]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("13_wubcq")
+region_rect = Rect2(24.682701, 24.650028, 448.40863, 451.06937)
+patch_margin_left = 31
+patch_margin_top = 33
+patch_margin_right = 40
+patch_margin_bottom = 37
+
+[node name="Control" type="Control" parent="CanvasLayer2/Control/HBoxContainer" unique_id=1856218487]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Control2" type="Control" parent="CanvasLayer2/Control/HBoxContainer" unique_id=189951170]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

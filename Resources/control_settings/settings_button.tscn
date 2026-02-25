@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cw537x2u4fpbc"]
+
+[ext_resource type="FontFile" uid="uid://eqkiic8464yc" path="res://Resources/dialogue_syst/Share Tech CYR/Share-Tech-CYR.otf" id="1_xin54"]
+[ext_resource type="StyleBox" uid="uid://cabmrh3w7ivyo" path="res://Stages/title/cool_title_button_texture.stylebox" id="2_qbj03"]
+
+[node name="Settings_Button" type="MarginContainer" unique_id=1087644374]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1685221237]
+layout_mode = 2
+
+[node name="ActionLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=1054678347]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+text = "Action name gg"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_itself" type="Button" parent="HBoxContainer" unique_id=19779317]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_xin54")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_qbj03")
+text = "key itself"

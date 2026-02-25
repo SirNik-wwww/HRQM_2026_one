@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b4n654ilud801"
+
+[deps]
+
+files=["res://Resources/dialogue_syst/Translations/Holy_real_ui.en.translation", "res://Resources/dialogue_syst/Translations/Holy_real_ui.ru.translation"]
+
+source_file="res://Resources/dialogue_syst/Translations/Holy_real_ui.csv"
+dest_files=["res://Resources/dialogue_syst/Translations/Holy_real_ui.en.translation", "res://Resources/dialogue_syst/Translations/Holy_real_ui.ru.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

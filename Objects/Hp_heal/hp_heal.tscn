@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://del5vhd2qdhqw"]
+
+[ext_resource type="Texture2D" uid="uid://x3nyw7ot3rrk" path="res://Texture/huita/inter_demo/1_part.png" id="1_ktnjr"]
+[ext_resource type="Script" uid="uid://b0u67ynfboysr" path="res://Objects/Hp_heal/hp_heal.gd" id="1_ryf2l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jsk27"]
+
+[node name="hp_heal" type="Node3D"]
+script = ExtResource("1_ryf2l")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_jsk27")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0485954, 0.997452, -0.0522277, -0.976174, 0.0584996, 0.208953, 0.211476, 0.0408292, 0.97653, -0.0188383, 0.2, 0)
+billboard = 2
+texture = ExtResource("1_ktnjr")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

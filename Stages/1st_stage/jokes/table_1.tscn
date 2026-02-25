@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ugmra4biehww"]
+
+[ext_resource type="Texture2D" uid="uid://c1imypxxnbeco" path="res://Objects/decor/funnies/cafe v2 3.png" id="1_k77po"]
+[ext_resource type="Texture2D" uid="uid://bf1x17mnu3a6s" path="res://Objects/decor/funnies/cafe t.png" id="2_sa2if"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k77po"]
+height = 2.45
+radius = 0.4584961
+
+[node name="table1" type="StaticBody3D" unique_id=1392110050]
+transform = Transform3D(1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1701383404]
+transform = Transform3D(-4.371138e-08, -8.7422784e-08, -3.039549, -8.7422784e-08, 1, -2.6572582e-07, 0.32899618, 2.876176e-08, -4.371139e-08, 9.44166e-07, -5.4, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 5
+texture = ExtResource("1_k77po")
+
+[node name="Sprite3D6" type="Sprite3D" parent="." unique_id=1966945190]
+transform = Transform3D(-0.4, -6.039832e-08, 0, 0, -1.7484556e-08, 0.4, -6.039832e-08, 0.4, 1.7484556e-08, 9.44166e-07, 0.94377947, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 5
+texture = ExtResource("2_sa2if")
+
+[node name="Sprite3D7" type="Sprite3D" parent="." unique_id=311342794]
+transform = Transform3D(-0.32899618, -1.0116659e-07, 1.7657433e-07, -1.1124369e-07, 1, -4.5647695e-08, -5.809227e-08, -1.5017905e-08, -3.039549, 9.44166e-07, -5.4, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 5
+texture = ExtResource("1_k77po")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1275447520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1054274e-15, -0.27499998, 0)
+shape = SubResource("CylinderShape3D_k77po")

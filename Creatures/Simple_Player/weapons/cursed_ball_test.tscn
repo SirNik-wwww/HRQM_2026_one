@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8emdtcdrtm82"]
+
+[ext_resource type="Script" uid="uid://c64qmit5siujd" path="res://Creatures/Simple_Player/weapons/cursed_ball_test.gd" id="1_fbk3a"]
+[ext_resource type="Texture2D" uid="uid://dgwexinq5qwuy" path="res://Creatures/Simple_Player/weapons/Bullet_pl.png" id="2_fbk3a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fbk3a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cwkx5"]
+radius = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbk3a"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.52549)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cwkx5"]
+material = SubResource("StandardMaterial3D_fbk3a")
+radius = 4.0
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwkx5"]
+transparency = 1
+albedo_color = Color(0.419608, 0, 0.631373, 0.611765)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3qxj"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_cwkx5")
+flip_faces = true
+
+[sub_resource type="Curve" id="Curve_fbk3a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.329545, 0.865169), 0.0, 0.0, 0, 0, Vector2(0.676136, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+top_level = true
+script = ExtResource("1_fbk3a")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.44625, 0, 0, 0, 0.44625, 0, 0, 0, 0.44625, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_fbk3a")
+
+[node name="Timer_Flee" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Area3D_for_Env" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_for_Env"]
+shape = SubResource("SphereShape3D_fbk3a")
+
+[node name="Area3D_for_boom" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_for_boom"]
+shape = SubResource("SphereShape3D_cwkx5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D_for_boom/CollisionShape3D"]
+visible = false
+mesh = SubResource("SphereMesh_cwkx5")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.85
+mesh = SubResource("BoxMesh_l3qxj")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 10.0
+linear_accel_max = 8.08
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+scale_amount_curve = SubResource("Curve_fbk3a")
+
+[connection signal="timeout" from="Timer_Flee" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D_for_Env" to="." method="_on_area_3d_for_env_body_entered"]

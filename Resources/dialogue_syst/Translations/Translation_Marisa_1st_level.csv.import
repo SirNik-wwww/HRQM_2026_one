@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://buf82ganqenkd"
+
+[deps]
+
+files=["res://Resources/dialogue_syst/Translations/Translation_Marisa_1st_level.en.translation", "res://Resources/dialogue_syst/Translations/Translation_Marisa_1st_level.ru.translation"]
+
+source_file="res://Resources/dialogue_syst/Translations/Translation_Marisa_1st_level.csv"
+dest_files=["res://Resources/dialogue_syst/Translations/Translation_Marisa_1st_level.en.translation", "res://Resources/dialogue_syst/Translations/Translation_Marisa_1st_level.ru.translation"]
+
+[params]
+
+compress=true
+delimiter=0

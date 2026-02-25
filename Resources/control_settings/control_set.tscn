@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://s8231in8rp4v"]
+
+[ext_resource type="Script" uid="uid://dkmwqbwe7i61" path="res://Resources/control_settings/control_set.gd" id="1_wnc1k"]
+[ext_resource type="Texture2D" uid="uid://dkjel002c60if" path="res://Texture/yes/menu window.png" id="2_akdqf"]
+[ext_resource type="PackedScene" uid="uid://cw537x2u4fpbc" path="res://Resources/control_settings/settings_button.tscn" id="2_wnc1k"]
+[ext_resource type="FontFile" uid="uid://eqkiic8464yc" path="res://Resources/dialogue_syst/Share Tech CYR/Share-Tech-CYR.otf" id="4_akdqf"]
+[ext_resource type="StyleBox" uid="uid://cabmrh3w7ivyo" path="res://Stages/title/cool_title_button_texture.stylebox" id="5_j8ad0"]
+
+[node name="ControlSet" type="Control" unique_id=1131645774]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_wnc1k")
+
+[node name="bg_margin" type="MarginContainer" parent="." unique_id=414778729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="bg_margin" unique_id=255111499]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_akdqf")
+region_rect = Rect2(24.682701, 24.650028, 448.40863, 451.06937)
+patch_margin_left = 31
+patch_margin_top = 33
+patch_margin_right = 40
+patch_margin_bottom = 37
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1542515416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="for_buttons" type="MarginContainer" parent="VBoxContainer" unique_id=1359372856]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/for_buttons" unique_id=1324138163]
+layout_mode = 2
+
+[node name="list_of_actions" type="VBoxContainer" parent="VBoxContainer/for_buttons/ScrollContainer" unique_id=972307732]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Settings_Button" parent="VBoxContainer/for_buttons/ScrollContainer/list_of_actions" unique_id=753304998 instance=ExtResource("2_wnc1k")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=721445863]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1347728367]
+layout_mode = 2
+
+[node name="ButtonDONE" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1000777484]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_akdqf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("5_j8ad0")
+text = "CONTROL_ACCEPT"
+
+[node name="ButtonRESET" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=2096776057]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_akdqf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("5_j8ad0")
+text = "CONTROL_RESET"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/ButtonDONE" to="." method="_on_button_done_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/ButtonRESET" to="." method="_on_button_reset_pressed"]

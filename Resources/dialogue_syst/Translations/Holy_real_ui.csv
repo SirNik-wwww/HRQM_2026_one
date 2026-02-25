@@ -1,0 +1,74 @@
+key,en,ru
+KOMBO_CHECK,CHECK,ОТЛАДКА
+KOMBO_DIAGONAL,DIAGONAL,ДИАГОНАЛЬ
+KOMBO_DIAGONAL_2,DIAGONAL 2,ДИАГОНАЛЬ 2
+KOMBO_TRIGGER_FINGERS,TRIGGER FINGERS,ПАЛЬЦЫ КУРКИ
+KOMBO_COUNTERATTACK,COUNTERATTACK,КОНТРУДАР
+KOMBO_MIDDLE_FINGER,F U C K,Ф А К
+KOMBO_UPPERCUT,UPPERCUT,АППЕРКОТ
+KOMBO_RIGHT_INTRUSION,RIGHT INTRUSION,ПРАВАЯ ИНТРУЗИЯ
+KOMBO_LEFT_EXTRUSION,LEFT EXTRUSION,ЛЕВАЯ ЭКСТРУЗИЯ
+KOMBO_SLAP,SLAP,ПОЩЁЧИНА
+KOMBO_PUSH,DIR,ПРЯМОЙ
+KOMBO_BALL_DIR,CURSE-BALL,ПРОКЛЯТЫЙ ШАР
+KOMBO_FAIL,Fail,Провал
+PAUSE_PAUSE,Pause...,Пауза...
+PAUSE_FUNNY_SOUND,OwO,UwU
+PAUSE_CONTINUE,Continue,Продолжить
+PAUSE_RESTART,Load Checkpoint,Загрузить Чекпоинт
+PAUSE_SETTINGS,Control,Управление
+PAUSE_QUIT_MENU,To Menu,В Меню
+PAUSE_QUIT_DESKTOP,To Desktop,На Стол
+MAIN_MENU_START,"S T A R T
+meanless adventure ","Н А Ч А Т Ь
+бессмысленное приключение"
+MAIN_MENU_CONTROL,"C O N T R O L
+may be customized","У П Р А В Л Е Н И Е
+может быть настроено"
+MAIN_MENU_EXIT,"L E A V E
+and forget","У Й Т И
+и забыть"
+FIRST_SET_SOUND_MAIN,Main Sound,Главный Звук
+FIRST_SET_SOUND_BGM,Sound of Music,Звук Музыки
+FIRST_SET_SOUND_SFX,Sound of Sfx,Звук Зэф
+FIRST_SET_FULLSCREEN,Fullscrean,Полнэкран
+BACK,back,назад
+CONTROL_ACCEPT,"A C C E P T
+in any case, the ideal 
+will never be achieved","П Р И Н Я Т Ь
+в любом случае идеал 
+никогда не достичь"
+CONTROL_RESET,"R E S E T
+will be easier than 
+trying to fix it manually.","С Б Р О С И Т Ь
+будет легче чем пытаться 
+исправить вручную"
+Key_Foward,Move Foward,Идти Вперёд
+Key_Left,Move Left,Идти Влево
+Key_Back,Move Back,Идти Назад
+Key_Right,Move Right,Идти Вправо
+Key_Run,Run,Бег
+Key_Crouch,Crouch,Присесть
+Key_Jump,Jump,Прыжок
+Key_Shoot,Shoot (mostly),Стрельба (в основном)
+Key_Alt_Shoot,Alt Shoot,Альт Стрельба
+Key_Middle_hit,Middle hit by nunch,Удар по середине нунчаками
+Key_Menu,Menu,Меню
+Key_Fullscreen,Fullscreen,Полный Экран
+Key_Alt_F4,same as Alt+F4,"Тоже самое, что и Alt + F4"
+Key_Restart_all,Restart All Stage,Рестарт Всего Уровня
+Key_Restart_check,Restart Checkpoint,Рестарт с Чекпоинта
+Key_Show_Cursor,Show/Hide Cursor,Показать/Скрыть Курсор
+Key_save_game,Save Game,Сохранить Игру
+Key_load_game,Load Game,Загрузить Игру
+Key_Inf_Jump,Inexhaustible Jump,Неисчерпаемый Прыжок
+Key_show_fps,Show/Hide FPS,Показать/Скрыть FPS
+Key_inf_hp,le Immortality,Эль Бессмертие
+Key_inf_dmg,le One-Punching,Эль Одним-Ударом
+Key_bind,"Press key to bind,,","Нажми кнопку, чтобы привязать,,"
+Key_inverse_mouse_1,Inverse Mouse X,Инвертировать Мышку по Х
+Key_inverse_mouse_2,Inverse Mouse Y,Инвертировать Мышку по У
+Key_inverse_mouse_label,Inverse Mouse,Инверсия Мышки
+Key_Debug_set_label,Debug settings,Настройки Отладки
+Key_Debug_set_Checkbox,Enable debug keys (do nothing for now),Включить клавиши отладки (ничего пока не делает)
+Lehguage_Setting,Language,Язык (Language)

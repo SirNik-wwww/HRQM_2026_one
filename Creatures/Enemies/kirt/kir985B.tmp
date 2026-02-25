@@ -1,0 +1,173 @@
+[gd_scene load_steps=20 format=3 uid="uid://cerxep8uxu7n0"]
+
+[ext_resource type="Texture2D" uid="uid://daevwl3i6btgw" path="res://Texture/huita/Tezti 1 LIST.png" id="1_ba3lm"]
+[ext_resource type="Script" path="res://Creatures/Enemies/kirt/kirt.gd" id="1_mf7e1"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_2i3lo"]
+[ext_resource type="Script" path="res://Creatures/Enemies/kirt/Kirt_SM/IdleKirtState.gd" id="4_otp4y"]
+[ext_resource type="Script" path="res://Creatures/Enemies/kirt/Kirt_SM/ChaseKirtState.gd" id="5_7k2ep"]
+[ext_resource type="Script" path="res://Creatures/Enemies/kirt/Kirt_SM/AtkKirtState.gd" id="6_teus2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46qh8"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmhyu"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0q2m"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkq5v"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pk75"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy8td"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmp55"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1h3j"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv5gq"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3win"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6q0k"]
+atlas = ExtResource("1_ba3lm")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njby0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhyu")
+}],
+"loop": false,
+"name": &"akt_commit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0q2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkq5v")
+}],
+"loop": false,
+"name": &"atk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk75")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmp55")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1h3j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3win")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6q0k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c45sb"]
+height = 1.0
+radius = 1.0
+
+[node name="kirt" type="CharacterBody3D" node_paths=PackedStringArray("anim_sp_pl", "ATK_SHAPE_CAST")]
+collision_layer = 12
+collision_mask = 5
+script = ExtResource("1_mf7e1")
+anim_sp_pl = NodePath("AnimatedSprite3D")
+ATK_SHAPE_CAST = NodePath("ShapeCast3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_46qh8")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.5, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_njby0")
+animation = &"akt_commit"
+autoplay = "idle"
+
+[node name="KirtStateMachine" type="Node" parent="." node_paths=PackedStringArray("CUR_ST")]
+script = ExtResource("3_2i3lo")
+CUR_ST = NodePath("IdleKirtState")
+
+[node name="IdleKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("4_otp4y")
+
+[node name="ChaseKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("5_7k2ep")
+
+[node name="AtkKirtState" type="Node" parent="KirtStateMachine"]
+script = ExtResource("6_teus2")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_c45sb")
+target_position = Vector3(0, 0.5, 0)
+collision_mask = 2

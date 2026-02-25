@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dprmprqt53i2r"]
+
+[ext_resource type="Script" uid="uid://nrorpgly4hng" path="res://Stages/title/stage_selection.gd" id="1_mj16b"]
+[ext_resource type="Texture2D" uid="uid://dkjel002c60if" path="res://Texture/yes/menu window.png" id="2_ug2if"]
+[ext_resource type="Texture2D" uid="uid://bgp80xheqjj6j" path="res://Texture/huita/inter_demo/stage_button_1_test.png" id="2_x85yw"]
+[ext_resource type="Texture2D" uid="uid://d1pd6dome7s7s" path="res://Texture/huita/inter_demo/stage_button_nope_test.png" id="3_mj16b"]
+[ext_resource type="Texture2D" uid="uid://ci71ejm40736h" path="res://Texture/huita/вуацывпцыквппцкцкппк 1.png" id="3_njmhd"]
+[ext_resource type="Texture2D" uid="uid://bh4sl3j8q4q40" path="res://Texture/huita/inter_demo/stage_button_test_test.png" id="4_ug2if"]
+
+[node name="Stage_selection" type="Control" unique_id=437879516]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mj16b")
+
+[node name="bg_margin" type="MarginContainer" parent="." unique_id=1285267300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="bg_margin" unique_id=871809073]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_ug2if")
+region_rect = Rect2(24.682701, 24.650028, 448.40863, 451.06937)
+patch_margin_left = 31
+patch_margin_top = 33
+patch_margin_right = 40
+patch_margin_bottom = 37
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1207686841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2042223970]
+layout_mode = 2
+
+[node name="ButtonRESET" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=846212004]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("3_njmhd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ButtonRESET" unique_id=920614824]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+text = "BACK_id"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=268590231]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=966230272]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button1st_st" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=745832805]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_x85yw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button2nd_st" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1963484388]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_mj16b")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button3rd_st" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=40914378]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_mj16b")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button4th_st" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1138469573]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("4_ug2if")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonRESET" to="." method="_on_button_reset_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button1st_st" to="." method="_on_button_1_st_st_pressed"]

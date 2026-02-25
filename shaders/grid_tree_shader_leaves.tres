@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bggdh43l5fyiq"]
+
+[ext_resource type="Texture2D" uid="uid://c2pprl7kph4h8" path="res://Grid/1st_stage_grid/Grid_1st_lvl_just_leaves.png" id="1_w65ic"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_w65ic")
+backlight_enabled = true
+backlight = Color(0.427493, 0.42749307, 0.42749307, 1)
+stencil_flags = 2
+stencil_reference = 11
+stencil_outline_thickness = 0.126

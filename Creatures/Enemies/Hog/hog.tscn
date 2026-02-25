@@ -1,0 +1,419 @@
+[gd_scene load_steps=29 format=3 uid="uid://bc5olcghfbtrq"]
+
+[ext_resource type="Script" uid="uid://cwb2eo75ay5nv" path="res://Creatures/Enemies/Hog/hog.gd" id="1_jvju0"]
+[ext_resource type="Texture2D" uid="uid://di7kjd3hwerkm" path="res://Creatures/Enemies/Hog/hog_list_.png" id="1_navx6"]
+[ext_resource type="Script" uid="uid://cg5wu1krfhn78" path="res://Scripts/HurtBox.gd" id="2_yu3h5"]
+[ext_resource type="Script" uid="uid://er36p51ct6oj" path="res://Scripts/state_machine.gd" id="4_jwhdb"]
+[ext_resource type="Script" uid="uid://dq7yde77djiv1" path="res://Creatures/Enemies/Hog/Hog_StM/IdleHogState.gd" id="5_aksgm"]
+[ext_resource type="Texture2D" uid="uid://4n1xfckegc3o" path="res://Texture/huita/inter_demo/hp_bar_main_test.png" id="5_wnco0"]
+[ext_resource type="Script" uid="uid://lfc72uqgqu8v" path="res://Creatures/Enemies/Hog/Hog_StM/WarningHogState.gd" id="6_alr6x"]
+[ext_resource type="Texture2D" uid="uid://c7e1y8xggokek" path="res://Texture/huita/inter_demo/hp_bar_lives_test.png" id="6_jwhdb"]
+[ext_resource type="Script" uid="uid://dso2qweostr2b" path="res://Creatures/Enemies/Hog/Hog_StM/ChaseHogState.gd" id="7_s64n0"]
+[ext_resource type="Script" uid="uid://i2ntgl1iwckb" path="res://Creatures/Enemies/Hog/Hog_StM/AtkHogState.gd" id="8_0rljl"]
+[ext_resource type="Script" uid="uid://tec6llvlxm3k" path="res://Creatures/Enemies/Hog/Hog_StM/StanHogState.gd" id="9_1wmxu"]
+[ext_resource type="AudioStream" uid="uid://7vxvya73im7v" path="res://Sound/test/у Стив (Майнкрафт).mp3" id="12_0rljl"]
+[ext_resource type="AudioStream" uid="uid://0ttj8jvec55w" path="res://Sound/SE/Something/(Pich)_fastforwardsoundeffects__orchestra-stab.wav" id="13_0rljl"]
+[ext_resource type="AudioStream" uid="uid://cocysyc1xlrmo" path="res://Sound/SE/Something/body-falling-on-the-ground-1__(ihitokage).wav" id="14_1wmxu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yu3h5"]
+radius = 0.3
+height = 1.5
+
+[sub_resource type="Animation" id="Animation_jvju0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.9, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i8fm4"]
+resource_name = "atk"
+length = 0.45
+step = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_jwhdb"]
+resource_name = "atk_commit"
+length = 0.4
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.2, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.97360003, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wnco0"]
+resource_name = "die"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.010000002, 0.15, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.9, 0), Vector3(0, 1.0414597, 0), Vector3(0, 0.5999508, 0), Vector3(0, 0.9, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.010000002, 0.15, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2), Vector3(0.18069534, 0.23888274, 0.2), Vector3(0.2614553, 0.14004496, 0.2), Vector3(0.2, 0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_yu3h5"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.9, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ss8h3"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.97360003, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0rljl"]
+resource_name = "warning"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.16, 0.26, 0.43, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.9, 0), Vector3(0, 0.7792486, 0), Vector3(0, 0.96446216, 0), Vector3(0, 0.9, 0), Vector3(0, 0.7792486, 0), Vector3(0, 0.9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.16, 0.26, 0.43, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2), Vector3(0.238108, 0.17335242, 0.2), Vector3(0.18202356, 0.21267603, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(0.238108, 0.17335242, 0.2), Vector3(0.2, 0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ss8h3"]
+_data = {
+&"RESET": SubResource("Animation_jvju0"),
+&"atk": SubResource("Animation_i8fm4"),
+&"atk_commit": SubResource("Animation_jwhdb"),
+&"die": SubResource("Animation_wnco0"),
+&"idle": SubResource("Animation_yu3h5"),
+&"walk": SubResource("Animation_ss8h3"),
+&"warning": SubResource("Animation_0rljl")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jvju0"]
+height = 2.2
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yjd4m"]
+height = 1.0
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ad24v"]
+height = 0.2
+radius = 0.6
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aksgm"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rljl"]
+
+[node name="Hog" type="CharacterBody3D" node_paths=PackedStringArray("ATK_TIMER", "ATK_SHAPE_CAST", "DEFAULT_ST", "HURT_BOX", "COLLISION", "H_BAR", "SPRITE", "ANIM_PL", "hp_label", "pain") groups=["Enemy", "Needs_be_save"]]
+collision_layer = 20
+collision_mask = 7
+script = ExtResource("1_jvju0")
+ATK_TIMER = NodePath("Atk_Timer")
+ATK_SHAPE_CAST = NodePath("Atk_ShapeCast3D")
+DEFAULT_ST = NodePath("Bandit_RStateMachine/IdleHogState")
+HURT_BOX = NodePath("HurtBox")
+COLLISION = NodePath("CollisionShape3D")
+H_BAR = NodePath("SubViewport/ProgressBar")
+SPRITE = NodePath("Sprite3D")
+ANIM_PL = NodePath("AnimationPlayer")
+hp_label = NodePath("SubViewport/ProgressBar/Label")
+pain = NodePath("Pain")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_yu3h5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ss8h3")
+}
+autoplay = "idle"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.9, 0)
+alpha_cut = 1
+texture = ExtResource("1_navx6")
+hframes = 4
+vframes = 3
+frame = 8
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("2_yu3h5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CylinderShape3D_jvju0")
+
+[node name="Bandit_RStateMachine" type="Node" parent="." node_paths=PackedStringArray("CUR_ST")]
+script = ExtResource("4_jwhdb")
+CUR_ST = NodePath("IdleHogState")
+
+[node name="IdleHogState" type="Node" parent="Bandit_RStateMachine"]
+script = ExtResource("5_aksgm")
+
+[node name="WarningHogState" type="Node" parent="Bandit_RStateMachine"]
+script = ExtResource("6_alr6x")
+
+[node name="ChaseHogState" type="Node" parent="Bandit_RStateMachine" node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("7_s64n0")
+nav_agent = NodePath("../../NavigationAgent3D")
+
+[node name="AtkHogState" type="Node" parent="Bandit_RStateMachine"]
+script = ExtResource("8_0rljl")
+
+[node name="StanHogState" type="Node" parent="Bandit_RStateMachine"]
+script = ExtResource("9_1wmxu")
+
+[node name="Atk_ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_yjd4m")
+target_position = Vector3(0, 0.5, 0)
+collision_mask = 10
+
+[node name="Area3D_for_jump" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_for_jump"]
+shape = SubResource("CylinderShape3D_ad24v")
+
+[node name="Jump_Timer" type="Timer" parent="Area3D_for_jump"]
+one_shot = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="RecalcTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(240, 40)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SubViewport"]
+offset_right = 250.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+max_value = 14.0
+value = 10.0
+texture_under = ExtResource("5_wnco0")
+texture_progress = ExtResource("6_jwhdb")
+texture_progress_offset = Vector2(20, 10)
+
+[node name="Label" type="Label" parent="SubViewport/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "10/10"
+
+[node name="Hp_Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_aksgm")
+
+[node name="Pain" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+stream = ExtResource("12_0rljl")
+bus = &"Sound_Effects"
+
+[node name="Atk_commit" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+stream = ExtResource("13_0rljl")
+bus = &"Sound_Effects"
+
+[node name="Pre_Atk" type="AudioStreamPlayer3D" parent="Atk_commit"]
+stream = ExtResource("14_1wmxu")
+volume_db = -6.0
+max_db = 0.0
+bus = &"Sound_Effects"
+
+[node name="Atk_Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Ram_timer" type="Timer" parent="."]
+wait_time = 1.2999999999999998
+
+[node name="RandomRam_timer" type="Timer" parent="."]
+
+[node name="Area_for_dmg" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area_for_dmg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70000005, 0)
+shape = SubResource("CapsuleShape3D_0rljl")
+
+[connection signal="body_entered" from="Area3D_for_jump" to="." method="_on_area_3d_for_jump_body_entered"]
+[connection signal="timeout" from="Area3D_for_jump/Jump_Timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="Atk_Timer" to="." method="_on_atk_timer_timeout"]
+[connection signal="timeout" from="RandomRam_timer" to="Bandit_RStateMachine/ChaseHogState" method="_on_random_ram_timer_timeout"]
+[connection signal="body_entered" from="Area_for_dmg" to="Bandit_RStateMachine/AtkHogState" method="_on_area_for_dmg_body_entered"]
